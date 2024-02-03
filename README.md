@@ -56,7 +56,7 @@
 
 ## プロジェクト説明
 ※[プロジェクトの詳しい説明と過程につきましてはこちらより](https://zenn.dev/eldorado215) <br>
-※[プロジェクト会議録](https://docs.google.com/spreadsheets/d/1vFpm3TK00l0waAvyiHfqa7ZDZ3zkNslgRtaVEF32sIs/edit#gid=574516391) <br>
+※[プロジェクト会議録](https://docs.google.com/spreadsheets/d/1vFpm3TK00l0waAvyiHfqa7ZDZ3zkNslgRtaVEF32sIs/edit#gid=574516391) <br><br>
 ページの日本語はGoogle翻訳を使って臨時的に翻訳しております。
 
 ## フロントエンド
