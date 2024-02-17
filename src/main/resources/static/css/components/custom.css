@@ -27,7 +27,7 @@
 .label__error-container{
     height: 1rem;
 }
-.label__error{
+.label__error,.label__error2{
     color: var(--color-error);
     font-size: 0.75rem;
     font-weight: 500;
@@ -60,6 +60,10 @@
 .input--member:focus{
     background-color: var(--color-accent);
     color: var(--color-primary);
+}
+
+.hide{
+    display: none;
 }
 
 .select input[type=radio]{
