@@ -19,6 +19,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Map;
+
 @Controller
 @RequestMapping("/members")
 @RequiredArgsConstructor
@@ -105,6 +107,15 @@ public class MemberController {
         redirectAttributes.addFlashAttribute("memberAddSuccess", "회원 가입이 완료되었습니다.");
         return "members/add-member-success";
     }
+
+    @PostMapping("/duplication-check/id")
+    @ResponseBody
+    public int showDuplicatedId(@RequestBody Map<String,String> memberIdJson){
+        String memberId = memberIdJson.get("memberId");
+        return memberService.checkDuplicatedId(memberId);
+    }
+
+
 
 
     /* 유저 회원 정보 메뉴 페이지 */

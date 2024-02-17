@@ -21,6 +21,9 @@ public interface MemberMapper {
     Member findByEmail(String memberEmail);
     List<Member> findAllByPaging(Map<String, Integer> pagingSettings);
     List<Member> findAllByKeyword(MemberSearchForm memberSearchForm);
+    int countById(String memberId);
+    int countByEmail(String memberEmail);
+    int countByHp(String memberHp);
     Long countAll();
     Long countAllByKeyword(MemberSearchForm memberSearchForm);
 

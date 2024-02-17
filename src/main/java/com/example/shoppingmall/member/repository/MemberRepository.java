@@ -18,6 +18,10 @@ public interface MemberRepository {
     Optional<Member> findByEmail(String memberEmail);
     Optional<Member> findByHp(String memberHp);
     List<Member> findAllByPaging(Map<String, Integer> pagingSettings);
+    int countById(String memberId);
+    int countByEmail(String memberEmail);
+    int countByHp(String memberHp);
+
     Long countAll();
     Long countAllByKeyword(MemberSearchForm memberSearchForm);
     List<Member> findAllByKeyword(MemberSearchForm memberSearchForm);

@@ -33,7 +33,20 @@ public class MemberService {
         memberRepository.save(member);
     }
 
-    /*유저 회원 정보 조회*/
+    /*실시간 아이디 중복 검사*/
+    public int checkDuplicatedId(String memberId){
+       return memberRepository.countById(memberId);
+    }
+
+    /*실시간 이메일 중복 검사*/
+
+
+    /*실시간 휴대폰 중복 검사*/
+
+
+
+
+    /*유저 로그인한 회원 정보 조회*/
     @Transactional(readOnly = true)
     public MemberUpdateDTO getMemberInfo(Long memberNo){
         Member member = memberRepository.findByNo(memberNo)

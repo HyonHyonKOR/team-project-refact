@@ -59,6 +59,21 @@ public class MyBatisMemberRepository implements MemberRepository {
     }
 
     @Override
+    public int countById(String memberId) {
+        return memberMapper.countById(memberId);
+    }
+
+    @Override
+    public int countByEmail(String memberEmail) {
+        return memberMapper.countByEmail(memberEmail);
+    }
+
+    @Override
+    public int countByHp(String memberHp) {
+        return memberMapper.countByHp(memberHp);
+    }
+
+    @Override
     public Long countAll() {
         return memberMapper.countAll();
     }
