@@ -16,6 +16,8 @@ public class WebConfig implements WebMvcConfigurer {
                 .addPathPatterns("/**")
                 .excludePathPatterns("/", "/members/add","/members/add-success",
                         "/members/duplication-check/id",
+                        "/members/duplication-check/email",
+                        "/members/duplication-check/hp",
                         "/admins/login",
                         "/members/login", "/members/logout",
                         "/items/all","/items/outer","/items/inner",
@@ -36,6 +38,9 @@ public class WebConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/","/members/add","/members/add-success",
                         "/admins/login",
                         "/members/login","/members/logout",
+                        "/members/duplication-check/id",
+                        "/members/duplication-check/email",
+                        "/members/duplication-check/hp",
                         "/members/delete-success","/members/{memberNo}/orders/check-itemstock","/members/orders/create",
                         "/members/{memberNo}/orders/create-order","members/{memberNo}/orders/create-success",
                         "/members/{memberNo}/orders/create-success",

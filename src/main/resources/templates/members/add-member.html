@@ -8,6 +8,7 @@
     <script src="/js/kakao-address.js"></script>
     <script src="/js/validation.js" defer></script>
     <script src="/js/duplicate-check.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 <header th:replace="~{/fragments/header :: header}"></header>
@@ -20,6 +21,8 @@
             <div class="label__error-container">
                 <h6 class="label__error" th:errors="*{memberId}">에러 메시지를 출력합니다.</h6>
                 <h6 class="label__error" th:with="fieldName='memberId', errorMessage=${errorMessage}" th:if="${fieldName}" th:text="${errorMessage}">에러 메시지를 출력합니다.</h6>
+                <h6 id="duplicatedId" class="label__error2 hide">이미 존재하는 아이디입니다.</h6>
+                <h6 id="notDuplicatedId" class="label__error2 label__ok hide">사용 가능한 아이디입니다.</h6>
             </div>
         </label>
         <label class="label" for="memberPw">
@@ -49,6 +52,8 @@
             <input id="memberHp" name="memberHp" class="input input--member input--lg" type="text" th:field="*{memberHp}" placeholder="-를 제외한 숫자(11자)" autocomplete="off"/>
             <div class="label__error-container">
                 <h6 class="label__error" th:errors="*{memberHp}">에러 메시지를 출력합니다.</h6>
+                <h6 id="duplicatedHp" class="label__error2 hide">이미 존재하는 번호입니다.</h6>
+                <h6 id="notDuplicatedHp" class="label__error2 label__ok hide">사용 가능한 번호입니다.</h6>
             </div>
         </label>
         <label class="label" for="memberEmail">
@@ -56,6 +61,8 @@
             <input id="memberEmail" name="memberEmail" class="input input--member input--lg" type="text" th:field="*{memberEmail}" placeholder="영문 및 숫자(최대 50자)" autocomplete="off"/>
             <div class="label__error-container">
                 <h6 class="label__error" th:errors="*{memberEmail}">에러 메시지를 출력합니다.</h6>
+                <h6 id="duplicatedEmail" class="label__error2 hide">이미 존재하는 이메일입니다.</h6>
+                <h6 id="notDuplicatedEmail" class="label__error2 label__ok hide">사용 가능한 이메일입니다.</h6>
             </div>
         </label>
         <label class="label" for="memberPostalCode">

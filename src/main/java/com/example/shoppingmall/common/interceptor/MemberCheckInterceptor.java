@@ -16,10 +16,9 @@ public class MemberCheckInterceptor implements HandlerInterceptor {
         HttpSession session = request.getSession(false);
         String requestedMemberNo = null;
 
-        System.out.println("requestURI = " + requestURI);
+        log.info("요청 URL : {}", requestURI);
         Member member = (Member) session.getAttribute("loginMember");
-        System.out.println("member = " + member);
-        
+
         if (member != null) {
 
             Long currentNoLong = member.getMemberNo();

@@ -112,10 +112,23 @@ public class MemberController {
     @ResponseBody
     public int showDuplicatedId(@RequestBody Map<String,String> memberIdJson){
         String memberId = memberIdJson.get("memberId");
+        System.out.println(memberId);
         return memberService.checkDuplicatedId(memberId);
     }
 
+    @PostMapping("/duplication-check/email")
+    @ResponseBody
+    public int showDuplicatedEmail(@RequestBody Map<String,String> memberEmailJson){
+        String memberEmail = memberEmailJson.get("memberEmail");
+        return memberService.checkDuplicatedEmail(memberEmail);
+    }
 
+    @PostMapping("/duplication-check/hp")
+    @ResponseBody
+    public int showDuplicatedHp(@RequestBody Map<String,String> memberHpJson){
+        String memberHp = memberHpJson.get("memberHp");
+        return memberService.checkDuplicatedHp(memberHp);
+    }
 
 
     /* 유저 회원 정보 메뉴 페이지 */
@@ -241,14 +254,6 @@ public class MemberController {
         model.addAttribute("memberIdDTO", memberInfoService.getMemberIdByEmail(memberEmail));
         return "info/find-id";
     }
-//    @PostMapping("/info/id/find-success")
-//    public String findIdSuccess(@Validated(MemberValidationSequence.class) @ModelAttribute("memberIdDTO") MemberIdDTO memberIdDTO, BindingResult bindingResult){
-//        if(bindingResult.hasErrors()){
-//            return "info/find-id-pw";
-//        }
-//        memberInfoService.getMemberIdByEmail(memberIdDTO.getMemberEmail(), memberIdDTO);
-//        return "info/find-id";
-//    }
 
     /*비밀번호 찾기*/
     @PostMapping("/info/pw")
@@ -266,11 +271,6 @@ public class MemberController {
         return"info/find-pw";
     }
 
-    /*비빌번호 재설정 페이지*///아이디 찾기와 비밀번호 찾기가 한페이지에서 출력되기때문에 나눌필요없음
-//    @GetMapping("/info/pw/update")
-//    public String goToPwUpdatePage(){
-//        return "info/reset-pw";
-//    }
 
     /*비밀번호 재설정 */
     @PostMapping("/info/pw/update")

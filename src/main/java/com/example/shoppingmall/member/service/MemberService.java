@@ -39,10 +39,14 @@ public class MemberService {
     }
 
     /*실시간 이메일 중복 검사*/
-
+    public int checkDuplicatedEmail(String memberEmail){
+        return memberRepository.countByEmail(memberEmail);
+    }
 
     /*실시간 휴대폰 중복 검사*/
-
+    public int checkDuplicatedHp(String memberHp){
+        return memberRepository.countByHp(memberHp);
+    }
 
 
 

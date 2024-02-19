@@ -32,6 +32,10 @@
     font-size: 0.75rem;
     font-weight: 500;
 }
+.label__ok{
+    color: darkgreen;
+}
+
 .input{
     width: 23rem;
     height: 3rem;
@@ -64,6 +68,9 @@
 
 .hide{
     display: none;
+}
+.active{
+    display: block;
 }
 
 .select input[type=radio]{
