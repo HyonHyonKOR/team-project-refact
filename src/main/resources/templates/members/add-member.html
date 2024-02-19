@@ -60,7 +60,7 @@
         </label>
         <label class="label" for="memberPostalCode">
             <h5 class="label__title">우편번호*</h5>
-            <input id="memberPostalCode" name=memberPostalCode class="input input--member input--mi" type="text" th:field="*{memberPostalCode}" readonly placeholder="클릭 시 자동입력" onclick="execDaumPostalcode()" />
+            <input id="memberPostalCode" name=memberPostalCode class="input input--member input--mi" type="text" th:field="*{memberPostalCode}" readonly placeholder="우편번호 찾기 버튼 클릭"/>
             <button type="button" class="btn btn--mi btn--black btn--address" onclick="execDaumPostalcode()">우편번호 찾기</button>
             <div class="label__error-container">
                 <h6 class="label__error" th:errors="*{memberPostalCode}">에러 메시지를 출력합니다.</h6>

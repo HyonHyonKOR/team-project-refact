@@ -10,7 +10,7 @@ memberForValidation.addEventListener('click',event =>{
     let target = event.target;
 
     //클릭된 요소가 input인지 확인
-    if(target.tagName !== 'INPUT') return;
+    if(target.tagName !== 'INPUT' && target.tagName !== 'BUTTON') return;
 
     //클릭된 input에서 가장 가까운 에러 메시지 컨테이너 찾기
     const serverErrorMessage = target.nextElementSibling.querySelector('.label__error');
