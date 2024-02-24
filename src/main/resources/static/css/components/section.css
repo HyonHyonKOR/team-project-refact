@@ -23,15 +23,17 @@
 .section{
     height: 50rem;
 }
-.section--banner{
+.section--banner,.section--access,.section--best-items{
     width: 1060px;
+}
+.section--banner{
     height: 25rem;
 }
 .section__order{
     width: 100%;
     padding: 0 15rem;
 }
-#about-us{
+#about-us, #access,#best-items{
     display: flex;
     width: 100%;
     justify-content: center;
@@ -41,27 +43,32 @@
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1140px) {
     .section{
-        margin: 0 4rem;
         height: 80%;
 
     }
-
     .section__title{
         margin:4rem 0 1rem 0;
         font-weight: 500;
         font-size: 1.5rem;
     }
+
+    .section--banner,.section--access,.section--best-items{
+        width: 600px;
+}
 }
 
 @media screen and (max-width: 768px) {
     .section{
-        margin: 0 2rem;
         height: 60%;
     }
 
     .section__title{
         margin:3rem 0 1rem 0;
+        text-align: center;
+    }
+    .section--banner,.section--access{
+        width:90%;
     }
 }

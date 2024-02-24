@@ -11,11 +11,12 @@
 <body>
 <header th:replace="~{fragments/login-header :: header}">
 </header>
-<img class=home__background-img src="/images/diego-sanchez-DEDhybzzBwc-unsplash.webp" alt="background-image"/>
+<img class=home__background-img src="/images/diego-sanchez-DEDhybzzBwc-unsplash-Downsizing.webp" alt="background-image"/>
 <main class="section__container">
    <section class="section" id="new-arrivals">
       <h1 class="section__title">New Arrival</h1>
       <div class="new-items__container">
+
          <span th:each="itemDTO : ${itemDTOList}" th:if="${itemDTOStat.index} < 4">
             <a th:href="@{/items/{itemNo}(itemNo=${itemDTO.itemNo})}">
                <div class="item__card">
@@ -25,16 +26,17 @@
                </div>
             </a>
          </span>
+
       </div>
    </section>
-   <section id="about-us" th:style=" 'background-image: url(/images/clay-banks-hi_52O-h5G8-unsplash-mod.webp); background-size:cover' ">
+   <section id="about-us" th:style=" 'background-image: url(/images/clay-banks-hi_52O-h5G8-unsplash-mod-Downsizing.webp); background-size:cover' ">
       <section class="section section--banner">
          <h1 class="section__title section__title--right">About Us</h1>
          <div class="banner__container">
             <div class="banner__info">
-               <img class="banner__logo" alt="banner" src="/images/spartan-helmet-white.svg">
+               <img class="banner__logo" src="/images/spartan-helmet-white.svg">
                <div class="banner__text">
-                  페리온에 오신 것을 환영합니다.<br>
+                  회원가입 후, <br>
                   더 많은 혜택과 정보를 만나보세요.
                </div>
             </div>
@@ -47,46 +49,49 @@
       </section>
    </section>
    <section class="section" id="best-items">
-      <h1 class="section__title">Best Items</h1>
-      <div class="slide__wrap">
-         <div class="slide__container clearfix">
-            <div th:each="itemReviewDTO: ${itemDTOListByReview}"
-                 th:if="${itemReviewDTOStat.index} < 3"
-                 th:id="'top' + ${itemReviewDTOStat.index + 1}" class="slide__box">
-               <button type="button" th:class="'btn--slide slide__prev' + ${itemReviewDTOStat.index + 1}"><img class="btn--slide-img" alt="back" src="/images/icons/left-arrow.svg"></button>
-               <img th:src="@{/images/itemImages/__${itemReviewDTO.itemNo}__/thumb/__${itemReviewDTO.itemPhotosDTO.itemThumb}__}">
-               <div class="slide__info">
-                  <h2 class="item__card-name item__card-name--rank" th:text="${itemReviewDTOStat.index + 1} + '위'"></h2>
-                  <h2 class="item__card-name" th:text="${itemReviewDTO.itemName}"></h2>
-                  <h2 class="item__card-price" th:text="${itemReviewDTO.itemPrice} + '원'"></h2>
-                  <div class="item__rank">
-                     <input
-                             type="hidden"
-                             th:name="${'ratevalue'+ itemReviewDTOStat.count}"
-                             th:value="${itemReviewDTO.itemGrade != null ?  itemReviewDTO.itemGrade : 0}"
-                             step="0.1"
-                             min="0"
-                             max="5"
-                     />
-                     <div class="rating-wrap">
-                        <div th:class="${'rating'+ itemReviewDTOStat.count}">
-                           <div th:class="${'overlay'+ itemReviewDTOStat.count}"></div>
+      <div class="section--best-items">
+         <h1 class="section__title">Best Items</h1>
+         <div class="slide__wrap">
+            <div class="slide__container clearfix">
+               <div th:each="itemReviewDTO: ${itemDTOListByReview}"
+                    th:if="${itemReviewDTOStat.index} < 3"
+                    th:id="'top' + ${itemReviewDTOStat.index + 1}" class="slide__box">
+                  <button type="button" th:class="'btn--slide slide__prev' + ${itemReviewDTOStat.index + 1}"><img class="btn--slide-img" alt="back" src="/images/icons/left-arrow.svg"></button>
+                  <img th:src="@{/images/itemImages/__${itemReviewDTO.itemNo}__/thumb/__${itemReviewDTO.itemPhotosDTO.itemThumb}__}">
+                  <div class="slide__info">
+                     <h2 class="item__card-name item__card-name--rank" th:text="${itemReviewDTOStat.index + 1} + '위'"></h2>
+                     <h2 class="item__card-name" th:text="${itemReviewDTO.itemName}"></h2>
+                     <h2 class="item__card-price" th:text="${itemReviewDTO.itemPrice} + '원'"></h2>
+                     <div class="item__rank">
+                        <input
+                                type="hidden"
+                                th:name="${'ratevalue'+ itemReviewDTOStat.count}"
+                                th:value="${itemReviewDTO.itemGrade != null ?  itemReviewDTO.itemGrade : 0}"
+                                step="0.1"
+                                min="0"
+                                max="5"
+                        />
+                        <div class="rating-wrap">
+                           <div th:class="${'rating'+ itemReviewDTOStat.count}">
+                              <div th:class="${'overlay'+ itemReviewDTOStat.count}"></div>
+                           </div>
                         </div>
+
+                     </div>
+                     <div class="slide__btns">
+                        <form th:action="@{/items/{itemNo}(itemNo=${itemReviewDTO.itemNo})}" method="get">
+                           <button class="btn btn--index btn--black btn--best-items">상품 자세히 보기</button>
+                        </form>
                      </div>
                   </div>
-                  <div class="slide__btns">
-                     <form th:action="@{/items/{itemNo}(itemNo=${itemReviewDTO.itemNo})}" method="get">
-                        <button class="btn btn--index btn--black">상품 자세히 보기</button>
-                     </form>
-                  </div>
+                  <button type="button" th:class="'btn--slide slide__next' + ${itemReviewDTOStat.index + 1}"><img class="btn--slide-img" alt="forward" src="/images/icons/right-arrow.svg"></button>
                </div>
-               <button type="button" th:class="'btn--slide slide__next' + ${itemReviewDTOStat.index + 1}"><img class="btn--slide-img" alt="forward" src="/images/icons/right-arrow.svg"></button>
             </div>
          </div>
       </div>
    </section>
    <section id="access">
-      <section class="section">
+      <section class="section section--access">
          <h1 class="section__title section__title--right">Access</h1>
          <div id="map" class="api__container" name="map">
             <!-- * 카카오맵 - 지도퍼가기 -->

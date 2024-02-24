@@ -49,6 +49,7 @@
       </section>
    </section>
    <section class="section" id="best-items">
+      <div class="section--best-items">
       <h1 class="section__title">Best Items</h1>
       <div class="slide__wrap">
          <div class="slide__container clearfix">
@@ -79,17 +80,18 @@
                   </div>
                   <div class="slide__btns">
                      <form th:action="@{/items/{itemNo}(itemNo=${itemReviewDTO.itemNo})}" method="get">
-                        <button class="btn btn--index btn--black">상품 자세히 보기</button>
+                        <button class="btn btn--index btn--black btn--best-items">상품 자세히 보기</button>
                      </form>
                   </div>
                </div>
                <button type="button" th:class="'btn--slide slide__next' + ${itemReviewDTOStat.index + 1}"><img class="btn--slide-img" alt="forward" src="/images/icons/right-arrow.svg"></button>
             </div>
          </div>
+       </div>
       </div>
    </section>
    <section id="access">
-      <section class="section">
+      <section class="section section--access">
          <h1 class="section__title section__title--right">Access</h1>
          <div id="map" class="api__container" name="map">
             <!-- * 카카오맵 - 지도퍼가기 -->

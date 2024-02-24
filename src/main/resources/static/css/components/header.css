@@ -5,7 +5,6 @@ header{
     position: fixed;
     top:0;
     width: 100%;
-    height: 3.4375rem;
     background-color: var(--color-primary);
     box-shadow: rgba(0, 0, 0,0.24) 0 3px 8px;
     z-index:10;
@@ -30,15 +29,11 @@ header{
     color: var(--color-primary);
 }
 .header__list{
-    padding: 2rem 0;
+    padding: 1.25rem 0;
 }
 
 .nav-shop__menus, .nav-search__menus{
     display: none;
-}
-
-.header__lists .header__nav-shop:hover .nav-shop__menus{
-    display: block;
 }
 
 .nav-shop__menus, .nav-search__menus {
@@ -60,11 +55,6 @@ header{
 .nav-shop__menu--title{
     color: inherit;
     padding-left: 0.3rem;
-}
-
-.nav-shop__menu:hover{
-    background-color: var(--color-text);
-    color: var(--color-accent);
 }
 
 .header__search{
@@ -89,20 +79,71 @@ header{
     display: none;
 }
 
+@media screen and (min-width: 768px){
+    .nav-shop__menu:hover{
+        background-color: var(--color-text);
+        color: var(--color-accent);
+    }
+    .header__lists .header__nav-shop:hover .nav-shop__menus{
+        display: block;
+    }
+}
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1140px) {
     .header__container{
-        margin: 0 4rem;
+        width:600px;
     }
 }
 
 @media screen and (max-width: 768px) {
     header{
-        padding: 0 2rem;
+        flex-direction: column;
+        padding: 1.75rem 0;
     }
-
+    .header__logo{
+        position: absolute;
+        left: 2rem;
+        top:0.75rem;
+    }
+    .header__nav{
+        width: 100%;
+        display: none;
+    }
+    .header__container{
+        flex-direction: column;
+    }
    .header__lists{
-       gap:1rem;
-       font-size: 0.75rem;
+       display: flex;
+       padding-top:2rem;
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+       gap:0;
+       font-size: 1rem;
    }
+   .header__list{
+       padding: 0.5rem 0
+   }
+   .header__nav-shop{
+       text-align: center;
+   }
+   .nav-shop__menus{
+       position: static;
+       padding-top: 0.5rem;
+       width: 100%;
+       display: none;
+   }
+    .nav-search__menus{
+        padding: 0.5rem 0;
+        position: static;
+        display: none;
+    }
+    .header__toggle{
+        position: absolute;
+        display: inline-block;
+        width: 2rem;
+        right: 2rem;
+        top:0.75rem;
+        cursor: pointer;
+    }
 }

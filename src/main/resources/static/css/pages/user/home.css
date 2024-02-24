@@ -66,7 +66,7 @@ address{
 }
 .slide__wrap{
     overflow: hidden;
-    width: 100%;
+    width: 1060px;
     height: 60%;
     margin-top: 4rem;
 }
@@ -103,17 +103,9 @@ address{
 }
 
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1140px) {
     .new-items__container{
-        width: 100%;
-        height: 55%;
-    }
-}
-
-
-@media screen and (max-width: 1024px) {
-    .new-items__container{
-        margin: 0 4rem;
+        width: 600px;
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: repeat(2,1fr);
     }
@@ -121,12 +113,30 @@ address{
         display: block;
         margin-bottom: 3rem;
     }
+    .banner__logo{
+        width: 3rem;
+    }
+    .banner__text{
+        font-size: 1.25rem;
+    }
+    .btn--index{
+        width: 6rem;
+        height: 3rem;
+        font-size: 1rem;
+    }
+    .btn--best-items{
+        font-size: 0.7rem;
+    }
+    .item__card-name--rank{
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
 }
 
 
 @media screen and (max-width: 768px) {
     .new-items__container{
-        margin: 0 4rem;
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: repeat(2,1fr);
     }
@@ -145,9 +155,23 @@ address{
 
 @media screen and (max-width: 600px) {
     .new-items__container{
-        margin: 0 4rem;
+        width:300px;
         grid-template-columns: repeat(1,1fr);
         grid-template-rows: repeat(4,1fr);
+    }
+    .banner__logo{
+        width: 2.5rem;
+    }
+    .banner__text{
+        font-size: 1rem;
+    }
+    .btn--index{
+        width: 3rem;
+        height: 2rem;
+        font-size: 0.5rem;
+    }
+    address,.address__time{
+        font-size: 0.75rem;
     }
 }
 
@@ -176,16 +200,6 @@ address{
 }
 
 
-@media screen and (max-width: 1024px) {
-
-    .slide__box {
-        padding-bottom: 6rem;
-    }
-
-
-}
-
-
 @media screen and (max-width: 664px) {
     .slide__wrap{
         font-size: 0.75rem;
@@ -208,6 +222,7 @@ address{
 @media screen and (max-width: 532px) {
     .slide__wrap{
         font-size: 0.6rem;
+        margin-bottom: 3rem;
     }
 
     h2.item__card-name.item__card-name--rank {
