@@ -13,12 +13,6 @@ public class MemberInfoService {
 
     private final MemberRepository memberRepository;
 
-//    @Transactional(readOnly = true)
-//    public member getMemberIdByEmail(String memberEmail, MemberIdDTO memberIdDTO) {
-//        Member member = MemberIdDTO.MemberIdDTOToMember(memberEmail, memberIdDTO);
-//        memberRepository.findByEmail(member.getMemberEmail()).orElse(null);
-//        return
-//    }
     /*아이디 찾기*/
     @Transactional(readOnly = true)
     public MemberIdDTO getMemberIdByEmail(String memberEmail) {

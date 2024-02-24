@@ -112,7 +112,6 @@ public class MemberController {
     @ResponseBody
     public int showDuplicatedId(@RequestBody Map<String,String> memberIdJson){
         String memberId = memberIdJson.get("memberId");
-        System.out.println(memberId);
         return memberService.checkDuplicatedId(memberId);
     }
 

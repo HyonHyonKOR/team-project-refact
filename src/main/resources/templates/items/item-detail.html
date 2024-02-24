@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <div th:remove="tag" th:replace="~{/fragments/head :: head} "></div>
+    <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
     <title>PERION - 상품 상세</title>
     <meta name="description" content="상품 정보, Q&A, 가격 등 다양한 상품의 정보를 확인하세요.">
     <link rel="stylesheet" href="/css/pages/user/items.css">
@@ -12,9 +12,9 @@
     <script src = "/js/member-updatecart.js"></script>
 </head>
 <body>
-<header th:if="${session.loginMember != null}" th:replace="~{/fragments/login-header :: header}">
+<header th:if="${session.loginMember != null}" th:replace="~{fragments/login-header :: header}">
 </header>
-<header th:unless="${session.loginMember == null}" th:replace="~{/fragments/header :: header}">
+<header th:unless="${session.loginMember == null}" th:replace="~{fragments/header :: header}">
 </header>
 <main class="main__container">
     <section id="item__info" class="item__container">

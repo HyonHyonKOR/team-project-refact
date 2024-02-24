@@ -1,34 +1,17 @@
-# Server
-server:
-  port: 8082
-
-#Gmail SMTP Server
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: perion1014
-    password:
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-
-# Mybatis
-mybatis:
-  mapper-locations: classpath:mapper/**/*.xml
-  configuration:
-    map-underscore-to-camel-case: "true"
-
-# File I/O
-file:
-  dir: shopping-mall/src/main/resources/static/images/itemImages/
-
-# Dev
 spring:
+  profiles:
+    group:
+      "local": "local_db,common"
+      "prod": "prod_db,common"
+---
+# Common
+spring:
+  config:
+    activate:
+      on-profile: "common"
   thymeleaf:
     cache: "false"
+    prefix: classpath:/templates/
   freemarker:
     cache: "false"
   devtools:
@@ -40,9 +23,40 @@ spring:
       max-file-size: "10MB"
       max-request-size: "40MB"
 
-  # MySQL
+# Server
+server:
+  port: 8082
+
+# Mybatis
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: "true"
+
+# File I/O
+file:
+  dir: shopping-mall/src/main/resources/static/images/itemImages/
+
+---
+# MySQL(local)
+spring:
+  config:
+    activate:
+      on-profile: local_db
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     url: jdbc:mysql://localhost:3306/perion?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
     password: "1234!@#$"
+
+---
+# MySQL(prod)
+spring:
+  config:
+    activate:
+      on-profile: prod_db
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: spring
+    url: jdbc:mysql://ec2-3-25-179-217.ap-southeast-2.compute.amazonaws.com:3306/perion?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    password: "RnjsGurah123!@#"

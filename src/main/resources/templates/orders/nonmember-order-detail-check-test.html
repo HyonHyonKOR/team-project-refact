@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <div th:remove="tag" th:replace="~{/fragments/head :: head} "></div>
+    <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
     <title>PERION - 비회원 주문 상세 조회</title>
     <script type="text/javascript" src="/js/pages/order.js" defer></script>
     <script type="text/javascript" src="/js/nonmember-orderdetail.js" defer></script>
 </head>
 <body>
-<header th:replace="~{/fragments/header :: header}"></header>
+<header th:replace="~{fragments/header :: header}"></header>
 <main class="main__container section">
     <h1 class="main__title">고객님의 주문 상품</h1>
     <table class = "table__client table--2">

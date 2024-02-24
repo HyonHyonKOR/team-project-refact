@@ -3,17 +3,17 @@
   <head th:admin-head>
     <div
       th:remove="tag"
-      th:replace="~{/fragments/admin-head :: admin-head} "
+      th:replace="~{fragments/admin-head :: admin-head} "
     ></div>
     <!--CSS-->
     <link rel="stylesheet" href="/css/pages/admins/admins-item-detail.css" />
   </head>
   <body>
     <header
-      th:replace="~{/fragments/admin-login-header :: admin-login-header}"
+      th:replace="~{fragments/admin-login-header :: admin-login-header}"
     ></header>
 
-    <aside th:replace="~{/fragments/admin-sidebar :: admin-sidebar}"></aside>
+    <aside th:replace="~{fragments/admin-sidebar :: admin-sidebar}"></aside>
 
     <main>
       <div class="main">

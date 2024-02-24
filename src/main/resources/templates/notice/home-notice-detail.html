@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <div th:remove="tag" th:replace="~{/fragments/head :: head} "></div>
+  <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
   <script type="module" src="/js/pages/home.js" defer></script>
 </head>
 <body>
-<header th:if="${session.loginMember != null}" th:replace="~{/fragments/login-header :: header}">
+<header th:if="${session.loginMember != null}" th:replace="~{fragments/login-header :: header}">
 </header>
-<header th:unless="${session.loginMember == null}" th:replace="~{/fragments/header :: header}">
+<header th:unless="${session.loginMember == null}" th:replace="~{fragments/header :: header}">
 </header>
 <main class="notice__container">
     <h1 class="section__title" th:text="${noticeUpdateDTO.getNoticeTitle()}">글제목</h1>

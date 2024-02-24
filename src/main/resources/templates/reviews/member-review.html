@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <div th:remove="tag" th:replace="~{/fragments/head :: head} "></div>
+    <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
     <title>PERION - 회원 리뷰 조회</title>
     <link rel="stylesheet" href="/css/pages/user/review-member.css">
 
 </head>
 <body>
-<header th:replace="~{/fragments/login-header :: header}"></header>
+<header th:replace="~{fragments/login-header :: header}"></header>
         <h1 class="main__title">나의 리뷰 목록</h1>
 
         <div class="review__myPage" th:if="${memberReviewList} > 0" th:each="ReviewDTO : ${memberReviewList}">

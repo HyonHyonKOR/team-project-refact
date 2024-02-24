@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <div th:remove="tag" th:replace="~{/fragments/head :: head} "></div>
+    <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
     <title>PERION - 나의 질문 목록</title>
     <link rel="stylesheet" href="/css/pages/user/member-qna.css">
     <script src="/js/pages/order.js"></script>
     <script src="/js/qna-detail.js"></script>
 </head>
 <body>
-<header th:replace="~{/fragments/login-header :: header}"></header>
+<header th:replace="~{fragments/login-header :: header}"></header>
 <main class="notice__container">
     <div class="main__container">
         <h1 class="main__title">나의 질문 목록</h1>

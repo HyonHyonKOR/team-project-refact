@@ -2,12 +2,12 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <div th:remove="tag" th:replace="~{/fragments/head :: head} "></div>
+    <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
     <script defer src="/js/member-updatecart.js"></script>
     <title>회원 장바구니 조회</title>
 </head>
 <body>
-<header th:replace="~{/fragments/login-header :: header}"></header>
+<header th:replace="~{fragments/login-header :: header}"></header>
 <!--비어있을 때-->
 <div th:if="${cartDTOList.size()} == 0 or ${cartDTOList} == null">
     <main class="main__container section">

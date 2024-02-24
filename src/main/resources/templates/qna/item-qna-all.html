@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <div th:remove="tag" th:replace="~{/fragments/head :: head} "></div>
+    <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
     <title>PERION - Q&A</title>
     <script src="/js/pages/order.js"></script>
     <script src="/js/qna-detail.js"></script>
@@ -18,9 +18,9 @@
     </style>
 </head>
 <body>
-<header th:if="${session.loginMember != null}" th:replace="~{/fragments/login-header :: header}">
+<header th:if="${session.loginMember != null}" th:replace="~{fragments/login-header :: header}">
 </header>
-<header th:unless="${session.loginMember != null}" th:replace="~{/fragments/header :: header}">
+<header th:unless="${session.loginMember != null}" th:replace="~{fragments/header :: header}">
 </header>
 <main class="notice__container">
     <div class="main__container">

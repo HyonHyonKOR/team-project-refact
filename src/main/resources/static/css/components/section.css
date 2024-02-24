@@ -1,6 +1,7 @@
 .section__container{
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     box-sizing: border-box;
 }
@@ -21,30 +22,30 @@
 
 .section{
     height: 50rem;
-    padding: 0 15rem;
 }
 .section--banner{
+    width: 1060px;
     height: 25rem;
 }
 .section__order{
     width: 100%;
     padding: 0 15rem;
 }
-
+#about-us{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 #access{
     background-color: var(--color-text);
 }
 
-@media screen and (max-width: 1440px) {
-    .section{
-        padding: 0 6rem;
-    }
-}
 
 @media screen and (max-width: 1024px) {
     .section{
-        padding: 0 4rem;
+        margin: 0 4rem;
         height: 80%;
+
     }
 
     .section__title{
@@ -56,7 +57,7 @@
 
 @media screen and (max-width: 768px) {
     .section{
-        padding: 0 2rem;
+        margin: 0 2rem;
         height: 60%;
     }
 

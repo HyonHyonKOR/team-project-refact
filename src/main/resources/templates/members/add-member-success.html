@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <div th:remove="tag" th:replace="~{/fragments/head :: head} "></div>
+    <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
     <title>PERION - 회원가입을 축하합니다.</title>
     <script type="module" src="/js/redirect-alert.js" defer></script>
     <script type="text/javascript" src="/js/pages/member-add-success.js" defer></script>
@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="successMessage" th:attr="data-success-message=${memberAddSuccess}"></div>
-<header th:replace="~{/fragments/header :: header}"></header>
+<header th:replace="~{fragments/header :: header}"></header>
 <main class="main__container">
     <img class="main__logo" src="/images/spartan-helmet.svg">
     <h1>페리온의 멤버가 되신 것을 환영합니다!</h1>

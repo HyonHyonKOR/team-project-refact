@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <div th:remove="tag" th:replace="~{/fragments/head :: head} "></div>
+    <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
     <title>PERION - 회원 정보 페이지</title>
     <script type="module" src="/js/redirect-alert.js" defer></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -10,7 +10,7 @@
     <script src="/js/validation.js" defer></script>
 </head>
 <body>
-<header th:replace="~{/fragments/login-header :: header}">
+<header th:replace="~{fragments/login-header :: header}">
 </header>
 <main class="main__container">
     <h1 class="main__title" th:text="|${session.loginMember.getMemberId()}님의 회원 정보|"></h1>

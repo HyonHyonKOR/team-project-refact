@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-    <div th:remove="tag" th:replace="~{/fragments/admin-head :: admin-head} "></div>
+    <div th:remove="tag" th:replace="~{fragments/admin-head :: admin-head} "></div>
     <style>
         main {
             display: flex;
@@ -21,9 +21,9 @@
     </style>
 </head>
 <body>
-    <header th:replace="~{/fragments/admin-login-header :: admin-login-header}">
+    <header th:replace="~{fragments/admin-login-header :: admin-login-header}">
     </header>
-    <aside th:replace="~{/fragments/admin-sidebar :: admin-sidebar}">
+    <aside th:replace="~{fragments/admin-sidebar :: admin-sidebar}">
     </aside>
 
     <main>

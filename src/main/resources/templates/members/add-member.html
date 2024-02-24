@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <div th:remove="tag" th:replace="~{/fragments/head :: head} "></div>
+    <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
     <title>PERION - 회원가입</title>
     <meta name="description" content="20대 선호도 1위 쇼핑몰! 지금 가입하면 다양한 이벤트가 기다리고 있습니다.">
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-<header th:replace="~{/fragments/header :: header}"></header>
+<header th:replace="~{fragments/header :: header}"></header>
 <main class="main__container">
     <h1 class="main__title">회원 가입</h1>
     <form id="member" class="member-add__form" action="/members/add" method="post" th:object="${memberAddDTO}">

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <div th:remove="tag" th:replace="~{/fragments/head :: head} "></div>
+    <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
     <title>Title</title>
 
 <script type = "text/javascript">
@@ -27,7 +27,7 @@
 
 </head>
 <body>
-<header th:replace="~{/fragments/login-header :: header}"></header>
+<header th:replace="~{fragments/login-header :: header}"></header>
 <br><br><br><br><br><br><br>
 <div th:if="${session.loginMember != null}">
     <h1>여기는 로그인 상태의 itemInfo_Temp_CMS.html입니다.</h1>

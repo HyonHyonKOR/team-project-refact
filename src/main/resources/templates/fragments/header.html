@@ -1,4 +1,5 @@
 <header th:if="${session.loginMember == null}" th:fragment="header">
+    <div class="header__container">
             <a href="/" class="header__logo">PERION</a>
             <nav class="header__nav">
                 <ul class="header__lists">
@@ -29,4 +30,5 @@
                     <li class="header__list"><a href="/carts">장바구니</a></li>
                 </ul>
             </nav>
+    </div>
 </header>
