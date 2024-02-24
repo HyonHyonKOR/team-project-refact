@@ -43,7 +43,7 @@ public class WebConfig implements WebMvcConfigurer {
                         "/members/duplication-check/hp",
                         "/members/delete-success","/members/{memberNo}/orders/check-itemstock","/members/orders/create",
                         "/members/{memberNo}/orders/create-order","members/{memberNo}/orders/create-success",
-                        "/members/{memberNo}/orders/create-success",
+                        "/members/{memberNo}/orders/create-success","/members/{memberNo}/reviews",
                         "/items/all","/items/outer","/items/inner",
                         "/items/pants","/items/search","/items/categoricalSearch",
                         "/items/{itemNo}","/items/{itemNo}/qna","/items/{itemNo}/qna/{qnaNo}",

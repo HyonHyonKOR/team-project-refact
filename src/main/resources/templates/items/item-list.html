@@ -44,15 +44,17 @@
         <li class="item__filter"><a class="now__page">Pants</a></li>
     </ul>
 </section>
-<main class="items__container" th:if="${itemDTOList.size()} > 0">
-    <a th:each="itemDTO: ${itemDTOList}" th:href="@{/items/{itemNo}(itemNo=${itemDTO.itemNo})}">
+<section id="item-list">
+    <main class="items__container" th:if="${itemDTOList.size()} > 0">
+     <a th:each="itemDTO: ${itemDTOList}" th:href="@{/items/{itemNo}(itemNo=${itemDTO.itemNo})}">
         <div class="item__card">
             <img class="item__card-img" th:src="@{/images/itemImages/__${itemDTO.itemNo}__/thumb/__${itemDTO.itemPhotosDTO.itemThumb}__}"/>
             <h3 class="items item__card-name" th:text="${itemDTO.itemName}"></h3>
             <h3 class="items item__card-price" th:text="${itemDTO.itemPrice} + '원'"></h3>
         </div>
-    </a>
-</main>
+      </a>
+    </main>
+</section>
 <main class="main__container" th:if="${itemDTOList.size()} == 0">
 
     <h3 class="main__title">검색 결과가 없습니다.</h3>

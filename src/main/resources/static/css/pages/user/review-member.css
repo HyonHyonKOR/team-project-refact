@@ -81,3 +81,6 @@
 .review_container2 div:nth-child(2) span {
     padding-right: 1rem;
 }
+.no-dto-comment{
+    text-align: center;
+}

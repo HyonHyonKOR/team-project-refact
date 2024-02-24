@@ -22,10 +22,14 @@
 .item__filter{
     margin: 0 1rem;
 }
+#item-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .items__container{
     display: grid;
-    padding: 0 15rem;
-    width: 100%;
+    width: 1020px;
     height: 55%;
     grid-template-columns: repeat(4,1fr);
     margin-top: 2rem;
@@ -70,3 +74,29 @@
     margin: 1rem 1rem 0 0;
 }
 
+@media screen and (max-width: 1140px) {
+    .items__container{
+        width: 600px;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .items__container{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+    .items__page{
+        padding: 0 5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #item_Thumbnail{
+        display: block;
+    }
+}

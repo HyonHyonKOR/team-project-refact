@@ -64,7 +64,7 @@
             <h5 class="label__title item__info-title">배송비</h5>
             <span class="item__delivery--price">3000원(10만원 구매 이상 시 무료)</span>
                 <div class="slide__btns item__btns"></div> <br>
-                <button class="btn btn--index btn--white">장바구니 추가</button>
+                <button class="btn btn--index btn--white btn--item-detail">장바구니 추가</button>
             </form>
                 <button th:if="${session.loginMember} != null"
                         th:memberNo="${session.loginMember.memberNo}"
@@ -72,14 +72,14 @@
                         th:itemName="${itemDTO.itemName}"
                         th:itemPrice="${itemDTO.itemPrice}"
                         th:onclick="checkItemStockPurchase(this.getAttribute('memberNo'), this.getAttribute('itemNo'), this.getAttribute('itemName'), this.getAttribute('itemPrice'))"
-                        class="btn btn--index btn--black"
+                        class="btn btn--index btn--black btn--purchase btn--item-detail"
                         th:text="구매하기"></button>
                 <button th:unless="${session.loginMember} != null"
                         th:itemNo="${itemDTO.itemNo}"
                         th:itemName="${itemDTO.itemName}"
                         th:itemPrice="${itemDTO.itemPrice}"
                         th:onclick="checkNonMemberItemStockPurchase(this.getAttribute('itemNo'), this.getAttribute('itemName'), this.getAttribute('itemPrice'))"
-                        class="btn btn--index btn--black"
+                        class="btn btn--index btn--black btn--purchase btn--item-detail"
                         th:text="구매하기"></button>
             </div>
             <div th:if="${ifAdded} != null">

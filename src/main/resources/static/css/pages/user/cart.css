@@ -20,6 +20,7 @@
     display: flex;
     justify-content: center;
     gap:1rem;
+    margin-top: 3rem;
 }
 #cartListAllCheckBtn,.btn__all-check, .cartCheckboxes{
     accent-color: var(--color-accent);

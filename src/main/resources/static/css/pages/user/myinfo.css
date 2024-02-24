@@ -1,6 +1,13 @@
+#my-info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .myinfo__container{
     display: grid;
-    padding: 2rem 15rem;
+    margin-top: 3rem;
+    width: 1020px;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(3,1fr);
 }
@@ -14,4 +21,31 @@
 }
 .myinfo__text{
     font-weight: 500;
+}
+
+@media screen and (max-width: 1140px) {
+    .myinfo__container{
+        width: 600px;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        row-gap: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .myinfo__container{
+        width: 500px;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .myinfo__container{
+        width:300px;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+
 }
