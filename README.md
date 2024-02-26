@@ -8,6 +8,12 @@
 </p>
 </div>
 
+## 使用方法
+
+管理者ページの場合、/admins/loginをURLを追加すれば、移動することが可能ですが、
+データーの保存のため、ID,PWは公開しております。
+気になる方はぜひご連絡ください。
+
 ## 全体目次
 - [プロジェクト概要](#プロジェクト概要)
 - [プロジェクト説明(フロントエンド・バックエンド)](#プロジェクト説明)
@@ -31,6 +37,7 @@
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=black"/>
     <img src="https://img.shields.io/badge/SweetAlert2-EF1970?style=flat-square&logo=SweetAlert&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Lodash-3492FF?style=flat-square&logo=Lodash&logoColor=white"/>
 
   + Environment<br>
     <img src="https://img.shields.io/badge/IntelliJ-000000?style=flat-square&logo=IntelliJIdea&logoColor=white"/>
@@ -57,7 +64,7 @@
   AJAX / 在庫管理機能　/　会員カート機能　/　非会員カート機能　/　非会員注文機能　 <br><br>
 
 ## プロジェクト説明
-※[プロジェクトの詳しい説明と過程につきましてはこちらより](https://zenn.dev/eldorado215) <br>
+※[プロジェクトの詳しい説明と過程につきましてはこちらより](https://zenn.dev/eldorado215/articles/7d73cc24b656ec) <br>
 ※[プロジェクト会議録](https://docs.google.com/spreadsheets/d/1vFpm3TK00l0waAvyiHfqa7ZDZ3zkNslgRtaVEF32sIs/edit#gid=574516391) <br><br>
 ページの日本語はGoogle翻訳を使って臨時的に翻訳しております。
 
@@ -75,7 +82,7 @@
     <tr>
       <td align="center"><img src="https://github.com/HyonHyonKOR/team-project/assets/134394081/89d0dfc2-acab-4fe7-8bc6-1d8e7eaaa42c" width="400px;" alt=""/></td>
       <td align="center"><img src="https://github.com/HyonHyonKOR/team-project/assets/134394081/aa90bc71-9002-4525-a054-6c33bb227e78" width="300px;" alt=""/></td>
-      <td align="center"><img src="https://github.com/HyonHyonKOR/team-project/assets/134394081/4ba646da-66f0-4db3-be4a-cc20ac4e731a" width="200px;" alt=""/></td>
+      <td align="center"><img src="https://github.com/HyonHyonKOR/team-project-refact/assets/134394081/a957749f-0746-457e-99a4-9dd83d6bb94c" width="200px;" alt=""/></td>
      <tr/>
     <tr>
       <td align="center"><img src="https://github.com/HyonHyonKOR/team-project/assets/134394081/9f4ba2e6-08f8-41b2-b334-26409b8d4ec2" width="400px;" alt=""/></td>
@@ -250,7 +257,7 @@
 
 ## リファクタリング
 - 近いうちにAWSへのdeployを計画中
-- 会員登録機能にAJAXを追加し、フロントエンドからもバリデーションチェックを追加
+- 会員登録機能にAJAX,debouce機能を追加し、フロントエンドからもバリデーションチェックを追加
 - ページ処理のバグを改善する予定
 
 ## 参考資料
