@@ -3,7 +3,7 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
-    <title>PERION - 모든 상품들</title>
+    <title>PERION - 商品一覧</title>
     <meta name="description" content="최신 트렌드의 아우터, 이너, 팬츠 등 다양한 상품이 있습니다. 트렌디한 상품을 원하시는 남성분들에게 추천합니다  ">
     <link rel="stylesheet" href="/css/pages/user/items.css">
 </head>
@@ -50,26 +50,26 @@
         <div class="item__card">
             <img class="item__card-img" th:src="@{/images/itemImages/__${itemDTO.itemNo}__/thumb/__${itemDTO.itemPhotosDTO.itemThumb}__}"/>
             <h3 class="items item__card-name" th:text="${itemDTO.itemName}"></h3>
-            <h3 class="items item__card-price" th:text="${itemDTO.itemPrice} + '원'"></h3>
+            <h3 class="items item__card-price" th:text="${itemDTO.itemPrice} + 'ウォン'"></h3>
         </div>
       </a>
     </main>
 </section>
 <main class="main__container" th:if="${itemDTOList.size()} == 0">
 
-    <h3 class="main__title">검색 결과가 없습니다.</h3>
+    <h3 class="main__title">お探しの商品が登録されていません。</h3>
 
 </main>
 <form class="items__search" action="/items/categoricalSearch" method="get">
     <input class="input--items" name="searchKeyword">
     <input type="hidden" name="selectedCategory" th:value="${Category}">
-    <button class="btn btn--xs btn--black">검색</button>
+    <button class="btn btn--xs btn--black">検索</button>
 </form>
 <div class="items__page" th:if="${session.ifSearched} == false">
 
-    <span th:if="${pageSettings.page &lt;= 1}">이전</span>
+    <span th:if="${pageSettings.page &lt;= 1}">以前</span>
     <span th:unless="${pageSettings.page &lt;= 1}">
-        <a th:href="@{/items/{category}(category=${Category}, page=${pageSettings.page - 1}, searchKeyword=${searchKeyword})}">이전</a>
+        <a th:href="@{/items/{category}(category=${Category}, page=${pageSettings.page - 1}, searchKeyword=${searchKeyword})}">以前</a>
     </span>
 
     <span th:each="i: ${#numbers.sequence(pageSettings.startPage, pageSettings.endPage)}">
@@ -79,16 +79,16 @@
            th:text="${i}"></a>
     </span>
 
-    <span th:if="${pageSettings.page >= pageSettings.totalPage}">다음</span>
+    <span th:if="${pageSettings.page >= pageSettings.totalPage}">次に</span>
     <a th:unless="${pageSettings.page >= pageSettings.totalPage}"
-       th:href="@{/items/{category}(category=${Category},page=${pageSettings.page + 1}, searchKeyword=${searchKeyword})}">다음</a>
+       th:href="@{/items/{category}(category=${Category},page=${pageSettings.page + 1}, searchKeyword=${searchKeyword})}">次に</a>
 </div>
 
 <div class="items__page" th:if="${session.ifSearched} == true">
 
-    <span th:if="${pageSettings.page &lt;= 1}">이전</span>
+    <span th:if="${pageSettings.page &lt;= 1}">以前</span>
     <span th:unless="${pageSettings.page &lt;= 1}">
-        <a th:href="@{/items/search(page=${pageSettings.page - 1}, searchKeyword=${searchKeyword})}">이전</a>
+        <a th:href="@{/items/search(page=${pageSettings.page - 1}, searchKeyword=${searchKeyword})}">以前</a>
     </span>
 
     <span th:each="i: ${#numbers.sequence(pageSettings.startPage, pageSettings.endPage)}">
@@ -98,9 +98,9 @@
            th:text="${i}"></a>
     </span>
 
-    <span th:if="${pageSettings.page >= pageSettings.totalPage}">다음</span>
+    <span th:if="${pageSettings.page >= pageSettings.totalPage}">次に</span>
     <a th:unless="${pageSettings.page >= pageSettings.totalPage}"
-       th:href="@{/items/search(page=${pageSettings.page + 1}, searchKeyword=${searchKeyword})}">다음</a>
+       th:href="@{/items/search(page=${pageSettings.page + 1}, searchKeyword=${searchKeyword})}">次に</a>
 </div>
 </body>
 </html>

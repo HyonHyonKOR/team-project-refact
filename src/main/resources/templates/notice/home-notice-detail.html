@@ -10,20 +10,20 @@
 <header th:unless="${session.loginMember == null}" th:replace="~{fragments/header :: header}">
 </header>
 <main class="notice__container">
-    <h1 class="section__title" th:text="${noticeUpdateDTO.getNoticeTitle()}">글제목</h1>
+    <h1 class="section__title" th:text="${noticeUpdateDTO.getNoticeTitle()}">題名</h1>
     <div class="reviews__container">
       <div class="review notice__detail">
-        <span class="review__header" th:text="|글번호  ${noticeUpdateDTO.getNoticeNo()}|">글번호</span>
-        <span class="review__header" th:text="|작성시간 ${#dates.format(noticeUpdateDTO.getNoticeCreatedTime(), 'yyyy-MM-dd')}|">작성일</span>
-        <span class="review__header" th:text="|조회수 ${noticeUpdateDTO.getNoticeViewcount()}|">조회수</span>
+        <span class="review__header" th:text="|番号  ${noticeUpdateDTO.getNoticeNo()}|">番号</span>
+        <span class="review__header" th:text="|作成時間 ${#dates.format(noticeUpdateDTO.getNoticeCreatedTime(), 'yyyy-MM-dd')}|">作成日</span>
+        <span class="review__header" th:text="|閲覧回数 ${noticeUpdateDTO.getNoticeViewcount()}|">閲覧回数</span>
       </div>
       <div class="notice__detail">
-        <p th:text="${noticeUpdateDTO.getNoticeContent()}">글내용</p>
+        <p th:text="${noticeUpdateDTO.getNoticeContent()}">内容</p>
       </div>
     </div>
   <div class="items__page notice__link">
-    <a href="#" onclick="history.back()">이전 페이지로</a>
-    <a href="/notice">공지사항으로</a>
+    <a href="#" onclick="history.back()">以前ページへ</a>
+    <a href="/notice">お知らせへ</a>
   </div>
 
 </main>

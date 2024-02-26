@@ -67,9 +67,9 @@
 
         <div class="admin_order_page">
             <div class="items__page">
-                <span th:if="${pageSettings.page &lt;= 1}">이전</span>
+                <span th:if="${pageSettings.page &lt;= 1}">以前</span>
                 <span th:unless="${pageSettings.page &lt;= 1}">
-                    <a th:href="@{/orders/admin/members(page=${pageSettings.page - 1})}">이전</a>
+                    <a th:href="@{/orders/admin/members(page=${pageSettings.page - 1})}">以前</a>
                 </span>
 
                 <span th:each="i: ${#numbers.sequence(pageSettings.startPage, pageSettings.endPage)}">
@@ -80,10 +80,10 @@
                     </a>
                 </span>
 
-                <span th:if="${pageSettings.page >= pageSettings.totalPage}">다음</span>
+                <span th:if="${pageSettings.page >= pageSettings.totalPage}">次に</span>
                 <a th:unless="${pageSettings.page >= pageSettings.totalPage}"
                    th:href="@{/orders/admin/members(page=${pageSettings.page + 1})}">
-                    다음
+                    次に
                 </a>
         </div>
     </div>

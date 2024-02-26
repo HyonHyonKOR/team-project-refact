@@ -27,7 +27,7 @@
                           onclick="toggleAllCartCheckbox('cartCheckboxes')"
                           type = "checkbox" checked>
                </th>
-               <th colspan="2" style="text-align: center">상품명</th>
+               <th colspan="2" style="text-align: center">商品名</th>
                <th class="cart__price">상품 가격</th>
                <th class="cart__quantity" style="text-align: center">수량</th>
                <th class="cart__btn"></th>
@@ -96,7 +96,7 @@
                              th:index = "${cartIndex.index}"
                              th:cartNo = "${cartDTO.cartNo}"
                              th:memberNo = "${cartDTO.memberNo}"
-                             th:onclick="deleteCart(this.getAttribute('index'), this.getAttribute('cartNo'), this.getAttribute('memberNo'))">삭제</button>
+                             th:onclick="deleteCart(this.getAttribute('index'), this.getAttribute('cartNo'), this.getAttribute('memberNo'))"></button>
                  </td>
              </tr>
         </div>
@@ -109,19 +109,19 @@
             <span>원</span>
         </h4>
         <h4>
-            <span>주문 총액: </span>
+            <span>注文総額: </span>
             <span id="orderSum">0</span>
-            <span>원</span>
+            <span>ウォン</span>
         </h4>
-        <span class="cart__delivery-price">배송비: 3000원 (10만원 이상 주문 시 무료)</span>
+        <span class="cart__delivery-price">送料: 3000ウォン (10万ウォン以上の注文は、無料)</span>
     </div>
     <div class="cart-order__btns">
-        <button class="btn btn--white btn--mi">선택상품 삭제</button>
+        <button class="btn btn--white btn--mi">選択商品削除</button>
         <button class="btn btn--black btn--mi"
                 th:cartDTOListSize ="${cartDTOList.size()}"
                 th:memberNo = "${cartDTOList[0].memberNo}"
                 th:onclick="checkItemStock2(this.getAttribute('cartDTOListSize'), this.getAttribute('memberNo'))"
-        >선택상품 구매</button>
+        >選択商品購買</button>
     </div>
 </main>
 </div>

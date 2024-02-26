@@ -44,7 +44,7 @@
             <div class="review_drop">
               <form action="/reviews/delete" method="post">
                 <input type="hidden" name="reviewNo" th:value="${ReviewDTO.reviewNo}" />
-                <button class="btn--drop">삭제</button>
+                <button class="btn--drop"></button>
               </form>
             </div>
           </div>
@@ -57,9 +57,9 @@
 
         <div class="margin"></div>
         <div class ="items__page" th:if="${reviewList.size()} > 0">
-          <span th:if="${pageSettings.page &lt;= 1}">이전</span>
+          <span th:if="${pageSettings.page &lt;= 1}">以前</span>
           <span th:unless="${pageSettings.page &lt;= 1}">
-                <a th:href="@{/reviews(page=${pageSettings.page - 1})}">이전</a>
+                <a th:href="@{/reviews(page=${pageSettings.page - 1})}">以前</a>
               </span>
 
           <span th:each="i : ${#numbers.sequence(pageSettings.startPage, pageSettings.endPage)}">
@@ -69,10 +69,10 @@
                    th:text="${i}"></a>
               </span>
 
-          <span th:if="${pageSettings.page >= pageSettings.totalPage}">다음</span>
+          <span th:if="${pageSettings.page >= pageSettings.totalPage}">次に</span>
           <a th:unless="${pageSettings.page >= pageSettings.totalPage}"
              th:href="@{/reviews(page=${pageSettings.page + 1})}"
-          >다음</a
+          >次に</a
           >
         </div>
       </div>

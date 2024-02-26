@@ -2,7 +2,7 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
-    <title>PERION - 나의 질문 목록</title>
+    <title>PERION -　私の質問一覧</title>
     <link rel="stylesheet" href="/css/pages/user/member-qna.css">
     <script src="/js/pages/order.js"></script>
     <script src="/js/qna-detail.js"></script>
@@ -11,17 +11,17 @@
 <header th:replace="~{fragments/login-header :: header}"></header>
 <main class="notice__container">
     <div class="main__container">
-        <h1 class="main__title">나의 질문 목록</h1>
+        <h1 class="main__title">私の質問一覧</h1>
         <!-- table Ex-->
         <table class="table__client" th:if="${qnaListByPaging.size()} > 0">
             <thead>
             <tr>
-                <th class="table__no">질문번호</th>
-                <th class="table__category">상품명</th>
-                <th class="table__category">구분</th>
-                <th>내용</th>
-                <th class="table__regtime">등록일자</th>
-                <th class="table__answer">답변 여부</th>
+                <th class="table__no">質問番号</th>
+                <th class="table__category">商品名</th>
+                <th class="table__category">種類</th>
+                <th>内容</th>
+                <th class="table__regtime">登録時間</th>
+                <th class="table__answer">回答状況</th>
                 <th></th>
             </tr>
             </thead>
@@ -37,24 +37,24 @@
                 <td th:text="${#dates.format(QnaDTO.qnaQuestionCreatedTime, 'yyyy-MM-dd')}"
                     th:onclick="|return openQnaWindow('${QnaDTO.itemNo}', '${QnaDTO.qnaNo}');|"></td>
                 <td>
-                    <span th:if="${QnaDTO.qnaAnswer != null}" >답변완료</span>
-                    <span th:unless="${QnaDTO.qnaAnswer != null}">답변대기</span>
+                    <span th:if="${QnaDTO.qnaAnswer != null}" >回答済み</span>
+                    <span th:unless="${QnaDTO.qnaAnswer != null}">回答待機</span>
                 </td>
                 <td class="qna__drop">
                     <form th:action="'/members/'+${QnaDTO.memberNo}+'/qna'" method="post" >
                         <input type="hidden" name="qnaNo" th:value="${QnaDTO.qnaNo}" />
-                        <button type="submit" class="btn--xs btn--black">삭제</button>
+                        <button type="submit" class="btn--xs btn--black"></button>
                     </form>
                 </td>
             </tr>
             </tbody>
         </table>
-        <div th:if="${qnaListByPaging.size()} == 0" class="no-dto-comment">질문 내역이 없습니다.</div>
+        <div th:if="${qnaListByPaging.size()} == 0" class="no-dto-comment">質問履歴がありません。</div>
     </div>
     <div class="items__page" th:if="${qnaListByPaging.size()} > 0">
-        <span th:if="${pageSettings.page &lt;= 1}">이전</span>
+        <span th:if="${pageSettings.page &lt;= 1}">以前</span>
         <span th:unless="${pageSettings.page &lt;= 1}">
-            <a th:href="@{/members/{memberNo}/qna(memberNo=${memberNo},page=${pageSettings.page - 1})}">이전</a>
+            <a th:href="@{/members/{memberNo}/qna(memberNo=${memberNo},page=${pageSettings.page - 1})}">以前</a>
           </span>
 
         <span th:each="i : ${#numbers.sequence(pageSettings.startPage, pageSettings.endPage)}">
@@ -64,10 +64,10 @@
                th:text="${i}"></a>
           </span>
 
-        <span th:if="${pageSettings.page >= pageSettings.totalPage}">다음</span>
+        <span th:if="${pageSettings.page >= pageSettings.totalPage}">次に</span>
         <a th:unless="${pageSettings.page >= pageSettings.totalPage}"
            th:href="@{/members/{memberNo}/qna(memberNo=${memberNo},page=${pageSettings.page + 1})}"
-        >다음</a
+        >次に</a
         >
     </div><!--main div-->
 </main>

@@ -12,15 +12,15 @@
 </header>
 <main class="notice__container">
     <div class="main__container">
-        <h1 class="main__title">공지사항</h1>
+        <h1 class="main__title">お知らせ</h1>
         <!-- table Ex-->
         <table class="table__client">
             <thead>
             <tr>
-                <th class="table__no">번호</th>
-                <th>제목</th>
-                <th class="table__regtime">작성일자</th>
-                <th class="table__answer">조회수</th>
+                <th class="table__no">番号</th>
+                <th>題名</th>
+                <th class="table__regtime">作成時間</th>
+                <th class="table__answer">閲覧回数</th>
             </tr>
             </thead>
             <tbody th:each="noticeListDTO : ${HomeNoticeListByPaging}">
@@ -34,9 +34,9 @@
         </table>
     </div>
     <div class="items__page">
-        <span th:if="${HomeNoticePageSettings.page &lt;= 1}">이전</span>
+        <span th:if="${HomeNoticePageSettings.page &lt;= 1}">以前</span>
         <span th:unless="${HomeNoticePageSettings.page &lt;= 1}">
-                    <a th:href="@{/notice(page=${HomeNoticePageSettings.page - 1})}">이전</a>
+                    <a th:href="@{/notice(page=${HomeNoticePageSettings.page - 1})}">以前</a>
                   </span>
 
         <span th:each="i : ${#numbers.sequence(HomeNoticePageSettings.startPage, HomeNoticePageSettings.endPage)}">
@@ -46,10 +46,10 @@
                        th:text="${i}"></a>
                   </span>
 
-        <span th:if="${HomeNoticePageSettings.page >= HomeNoticePageSettings.totalPage}">다음</span>
+        <span th:if="${HomeNoticePageSettings.page >= HomeNoticePageSettings.totalPage}">次に</span>
         <a th:unless="${HomeNoticePageSettings.page >= HomeNoticePageSettings.totalPage}"
            th:href="@{/notice(page=${HomeNoticePageSettings.page + 1})}"
-        >다음</a
+        >次に</a
         >
     </div><!--main div-->
 </main>

@@ -48,9 +48,9 @@
         <div th:unless="${memberOrderDTOList.size()} > 0">주문 내역이 없습니다.</div>
     </div>
     <div class="items__page" th:if="${memberOrderDTOList.size()} != 0">
-        <span th:if="${pageSettings.page &lt;= 1}">이전</span>
+        <span th:if="${pageSettings.page &lt;= 1}">以前</span>
         <span th:unless="${pageSettings.page &lt;= 1}">
-            <a th:href="@{/members/{memberNo}/orders(memberNo=${session.loginMember.memberNo}, page=${pageSettings.page - 1})}">이전</a>
+            <a th:href="@{/members/{memberNo}/orders(memberNo=${session.loginMember.memberNo}, page=${pageSettings.page - 1})}">以前</a>
         </span>
 
             <span th:each="i: ${#numbers.sequence(pageSettings.startPage, pageSettings.endPage)}">
@@ -60,9 +60,9 @@
                th:text="${i}"></a>
         </span>
 
-            <span th:if="${pageSettings.page >= pageSettings.totalPage}">다음</span>
+            <span th:if="${pageSettings.page >= pageSettings.totalPage}">次に</span>
             <a th:unless="${pageSettings.page >= pageSettings.totalPage}"
-               th:href="@{/members/{memberNo}/orders(memberNo=${session.loginMember.memberNo}, page=${pageSettings.page + 1})}">다음</a>
+               th:href="@{/members/{memberNo}/orders(memberNo=${session.loginMember.memberNo}, page=${pageSettings.page + 1})}">次に</a>
         </div><!--main div-->
 </main>
 </body>

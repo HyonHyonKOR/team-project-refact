@@ -53,7 +53,7 @@
               <td class="members-delete__container">
                 <form action="/members/delete" method="post">
                   <input type="hidden" name="memberNo" th:value="${memberSearchDTO.memberNo}" />
-                  <button class="btn btn--xs btn--black">삭제</button>
+                  <button class="btn btn--xs btn--black"></button>
                 </form>
               </td>
             </tr>
@@ -61,9 +61,9 @@
         </table>
 
         <div class="admin_member_page">
-          <span th:if="${pageSettings.page &lt;= 1}">이전</span>
+          <span th:if="${pageSettings.page &lt;= 1}">以前</span>
           <span th:unless="${pageSettings.page &lt;= 1}">
-            <a th:href="@{/members/admin(page=${pageSettings.page - 1})}">이전</a>
+            <a th:href="@{/members/admin(page=${pageSettings.page - 1})}">以前</a>
           </span>
 
           <span th:each="i : ${#numbers.sequence(pageSettings.startPage, pageSettings.endPage)}">
@@ -73,10 +73,10 @@
                th:text="${i}"></a>
           </span>
 
-          <span th:if="${pageSettings.page >= pageSettings.totalPage}">다음</span>
+          <span th:if="${pageSettings.page >= pageSettings.totalPage}">次に</span>
           <a th:unless="${pageSettings.page >= pageSettings.totalPage}"
              th:href="@{/members/admin(page=${pageSettings.page + 1})}"
-          >다음</a
+          >次に</a
           >
         </div>
       </div>

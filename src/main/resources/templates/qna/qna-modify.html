@@ -17,12 +17,12 @@
     <div class="line"></div>
 
     <div class="title">
-        <span class="t">제목: <input type="text" name="qnaTitle" th:value="${qnaDetail.qnaTitle}" /> </span>
+        <span class="t">題名: <input type="text" name="qnaTitle" th:value="${qnaDetail.qnaTitle}" /> </span>
         <select name="qnaClassification">
-            <option value="사이즈" th:selected="${qnaDetail.qnaClassification == '사이즈'}">사이즈</option>
-            <option value="배송" th:selected="${qnaDetail.qnaClassification == '배송'}">배송</option>
-            <option value="재입고" th:selected="${qnaDetail.qnaClassification == '재입고'}">재입고</option>
-            <option value="상품상세문의" th:selected="${qnaDetail.qnaClassification == '상품상세문의'}">상품상세문의</option>
+            <option value="사이즈" th:selected="${qnaDetail.qnaClassification == '사이즈'}">サイズ</option>
+            <option value="배송" th:selected="${qnaDetail.qnaClassification == '배송'}">配送</option>
+            <option value="재입고" th:selected="${qnaDetail.qnaClassification == '재입고'}">再入庫</option>
+            <option value="상품상세문의" th:selected="${qnaDetail.qnaClassification == '상품상세문의'}">商品詳細</option>
         </select>
         <span class="d" th:text="${#dates.format(qnaDetail.qnaQuestionCreatedTime, 'yyyy-MM-dd')}"></span>
     </div>
@@ -46,7 +46,7 @@
                 <button class="btn btn--black btn--xs"
                         th:onclick="|window.location.href=
                         '/members/${qnaDetail.memberNo}/qna/${qnaDetail.qnaNo}/update'|">
-                    수정
+                    修正
                 </button>
             </div>
         </div>
@@ -58,11 +58,11 @@
     <div class="context">
 
         <div class="inner-div">
-            <div class="inner">어드민</div>
+            <div class="inner">マネージャー</div>
         </div>
 
         <div class="inner--context">
-            <div th:text="${qnaDetail.qnaAnswer} != null ? ${qnaDetail.qnaAnswer} : '곧 답변 드리겠습니다.'"></div>
+            <div th:text="${qnaDetail.qnaAnswer} != null ? ${qnaDetail.qnaAnswer} : '確認でき次第ご答弁させて頂きます。'"></div>
         </div>
 
         <div class="inner-div">

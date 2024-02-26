@@ -60,7 +60,7 @@ function updateQuantity(changeQuantity, index, cartNo, memberNo, itemNo, itemSiz
 
 //회원 - 장바구니 조회 페이지 내, 장바구니 항목 삭제 함수
 function deleteCart(index, cartNo, memberNo){
-    let deleteCheck = confirm('장바구니에서 해당 항목을 삭제하시겠습니까?');
+    let deleteCheck = confirm('カートからこの商品を削除されますか?');
     if(deleteCheck == true){
         fetch('/carts/' + memberNo + '/' + cartNo + '/delete',{
             method: 'POST',

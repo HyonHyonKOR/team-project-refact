@@ -2,20 +2,19 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
-    <title>PERION - ID/PW 찾기 페이지</title>
-    <meta name="description" content="20대 선호도 1위 쇼핑몰! 지금 로그인하면 다양한 이벤트 정보를 확인할 수 있습니다.">
+    <title>PERION - ID/PW 照会ページ</title>
     <script type="module" src="/js/pages/member-login.js" defer></script>
 </head>
 <body>
 <header th:replace="~{fragments/header :: header}"></header>
 <main class="main__container">
-    <h1 class="main__title">아이디 조회 성공</h1>
-    <h4 th:text="'회원님의 아이디는 ' + ${#strings.substring(memberIdDTO.memberId, 0, 3)} + '***' + ' 입니다.'"></h4>
+    <h1 class="main__title">ID照会成功</h1>
+    <h4 th:text="'会員様のIDは ' + ${#strings.substring(memberIdDTO.memberId, 0, 3)} + '***' + ' です。'"></h4>
     <form action="/members/login" method="get">
-        <button type="submit" class="btn btn--black">로그인 페이지로</button>
+        <button type="submit" class="btn btn--black">ログインページ</button>
     </form>
     <form action="/members/info" method="get">
-        <button type="submit" class="btn btn--white">비밀번호 찾기</button>
+        <button type="submit" class="btn btn--white">パスワード照会</button>
     </form>
 
 </main>

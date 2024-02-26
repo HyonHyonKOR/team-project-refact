@@ -16,15 +16,15 @@
 
     <form th:action="'/members/'+${ReviewDTO.memberNo}+'/reviews/'+${ReviewDTO.reviewNo}" method="post">
         <input type="hidden" name="reviewNo" th:value="${ReviewDTO.reviewNo}" />
-        <button th:if="${session.loginMember != null}">삭제</button>
+        <button th:if="${session.loginMember != null}"></button>
     </form>
     <hr>
 </div>
 
 <div class="items__page">
-    <span th:if="${pageSettings.page &lt;= 1}">이전</span>
+    <span th:if="${pageSettings.page &lt;= 1}">以前</span>
     <span th:unless="${pageSettings.page &lt;= 1}">
-                <a th:href="@{/templates/reviews(memberNo=${memberNo},page=${pageSettings.page - 1})}">이전</a>
+                <a th:href="@{/templates/reviews(memberNo=${memberNo},page=${pageSettings.page - 1})}">以前</a>
               </span>
 
     <span th:each="i : ${#numbers.sequence(pageSettings.startPage, pageSettings.endPage)}">
@@ -34,10 +34,10 @@
                    th:text="${i}"></a>
               </span>
 
-    <span th:if="${pageSettings.page >= pageSettings.totalPage}">다음</span>
+    <span th:if="${pageSettings.page >= pageSettings.totalPage}">次に</span>
     <a th:unless="${pageSettings.page >= pageSettings.totalPage}"
        th:href="@{/templates/reviews(memberNo=${memberNo},page=${pageSettings.page + 1})}"
-    >다음</a
+    >次に</a
     >
 </div>
 </body>

@@ -29,7 +29,7 @@
                     type="checkbox" checked
                     id = "cartListAllCheckBtn"
                     onclick="toggleAllCartCheckbox('cartCheckboxes')"/></th>
-            <th colspan="2" style="text-align: center">상품명</th>
+            <th colspan="2" style="text-align: center">商品名</th>
             <th class="cart__price">상품 가격</th>
             <th class="cart__quantity" style="text-align: center">수량</th>
             <th class="cart__btn"></th>
@@ -75,7 +75,7 @@
                         th:id = "'deleteBtn_' + ${nonMemberCartDTO.cartNo}"
                         th:cartIndex = "${Index.index}"
                         th:onclick= "sendCartDeleteJson(this.getAttribute('cartIndex'))"
-                >삭제</button>
+                ></button>
             </td>
         </tr>
         </div>
@@ -95,11 +95,11 @@
         <span class="cart__delivery-price">배송료:3000원 (10만원 이상 구매 시 무료)</span>
     </div>
     <div class="cart-order__btns">
-        <button class="btn btn--white btn--mi">선택상품 삭제</button>
+        <button class="btn btn--white btn--mi">選択商品削除</button>
         <button class="btn btn--black btn--mi"
                 th:cartDTOListSize ="${session.nonmemberCartList.size()}"
                 th:onclick="checkItemStock(this.getAttribute('cartDTOListSize'))"
-        >선택상품 구매</button>
+        >選択商品購買</button>
     </div>
 </main>
 </div>

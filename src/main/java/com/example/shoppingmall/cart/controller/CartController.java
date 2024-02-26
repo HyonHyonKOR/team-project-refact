@@ -160,15 +160,6 @@ public class CartController {
         return "carts/nonmember-cart-list";
     }
 
-    @GetMapping("/member/order-list-test")
-    public String goToMemberOrderListTest(){
-        return "member-order-list";
-    }
-
-    @GetMapping("/member/order-detail-test")
-    public String goToMemberOrderDetailTest(){
-        return "member-order-detail";
-    }
 
     @GetMapping("/nonmember/order-detail-check-test")
     public String goToNonmemberOrderDetailCheckTest(){

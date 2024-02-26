@@ -2,13 +2,13 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
-    <title>PERION - 회원 리뷰 조회</title>
+    <title>PERION - 会員レビュー一覧</title>
     <link rel="stylesheet" href="/css/pages/user/review-member.css">
 
 </head>
 <body>
 <header th:replace="~{fragments/login-header :: header}"></header>
-        <h1 class="main__title">나의 리뷰 목록</h1>
+        <h1 class="main__title">私のレビュー一覧</h1>
 
         <div class="review__myPage" th:if="${#lists.size(memberReviewList) } > 0" th:each="ReviewDTO : ${memberReviewList}">
 
@@ -17,7 +17,7 @@
                 <div class="review_info">
                     <a class="item__link" th:text="${ReviewDTO.ItemName}"
                        th:href="@{/items/{itemNo}(itemNo=${ReviewDTO.itemNo})}"></a>
-                    <span th:text="'사이즈: '+${ReviewDTO.itemSize}"></span>
+                    <span th:text="'サイズ: '+${ReviewDTO.itemSize}"></span>
                     <span th:text= "'★'+${ReviewDTO.reviewScore}"></span>
                 </div>
 
@@ -25,7 +25,7 @@
                     <form th:action="@{'/members/' + ${ReviewDTO.memberNo} + '/reviews'}" method="post">
                         <input type="hidden" name="reviewNo" th:value="${ReviewDTO.reviewNo}" />
                         <input type="hidden" name="page" th:value="${pageSettings.page}" />
-                        <button class="btn--drop">삭제</button>
+                        <button class="btn--drop">削除</button>
                     </form>
                 </div>
 
@@ -35,14 +35,14 @@
 
         </div>
 
-        <div th:if="${#lists.size(memberReviewList) } == 0" class="no-dto-comment">리뷰 내역이 없습니다.</div>
+        <div th:if="${#lists.size(memberReviewList) } == 0" class="no-dto-comment">作成したレビューがありません。</div>
 
 
     <div class="review__page" th:if="${#lists.size(memberReviewList) } > 0">
 
-        <span th:if="${pageSettings.page &lt;= 1}">이전</span>
+        <span th:if="${pageSettings.page &lt;= 1}">以前</span>
         <span th:unless="${pageSettings.page &lt;= 1}">
-            <a th:href="@{/members/{memberNo}/reviews(memberNo=${memberNo},page=${pageSettings.page - 1})}">이전</a>
+            <a th:href="@{/members/{memberNo}/reviews(memberNo=${memberNo},page=${pageSettings.page - 1})}">以前</a>
           </span>
 
         <span th:each="i : ${#numbers.sequence(pageSettings.startPage, pageSettings.endPage)}">
@@ -52,10 +52,10 @@
                th:text="${i}"></a>
           </span>
 
-        <span th:if="${pageSettings.page >= pageSettings.totalPage}">다음</span>
+        <span th:if="${pageSettings.page >= pageSettings.totalPage}">次に</span>
         <a th:unless="${pageSettings.page >= pageSettings.totalPage}"
            th:href="@{/members/{memberNo}/reviews(memberNo=${memberNo},page=${pageSettings.page + 1})}"
-        >다음</a>
+        >次に</a>
 
     </div>
 

@@ -2,7 +2,7 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" >
 <head>
    <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
-   <title>PERION 공식 온라인 쇼핑몰</title>
+   <title>PERION 公式サイト</title>
    <meta name="description" content="웹페이지 설명">
    <script src="/js/pages/login-home.js" defer></script>
    <link rel="stylesheet" href="/css/components/star.css">
@@ -22,7 +22,7 @@
                <div class="item__card">
                   <img class="item__card-img" th:src="@{/images/itemImages/__${itemDTO.itemNo}__/thumb/__${itemDTO.itemPhotosDTO.itemThumb}__}">
                   <h3 class="item__card-name" th:text="${itemDTO.itemName}"></h3>
-                  <h3 class="item__card-price" th:text="${itemDTO.itemPrice} + '원'"></h3>
+                  <h3 class="item__card-price" th:text="${itemDTO.itemPrice} + 'ウォン'"></h3>
                </div>
             </a>
          </span>
@@ -36,14 +36,14 @@
             <div class="banner__info">
                <img class="banner__logo" src="/images/spartan-helmet-white.svg">
                <div class="banner__text">
-                  회원가입 후, <br>
-                  더 많은 혜택과 정보를 만나보세요.
+                  ようこそ, <br>
+                  お得な情報をこちらにあります。
                </div>
             </div>
             <div class="banner__btns">
-               <button class="btn btn--index btn--black btn--member-info" th:onclick="@{|window.location='/members/${session.loginMember.getMemberNo()}/show-info'|}">마이페이지</button>
-               <button class="btn btn--index btn--black btn--notice" onclick="location.href='/notice'">공지사항</button>
-               <button class="btn btn--index btn--black btn--items" onclick="location.href='/items'">상품 보기</button>
+               <button class="btn btn--index btn--black btn--member-info" th:onclick="@{|window.location='/members/${session.loginMember.getMemberNo()}/show-info'|}">会員情報</button>
+               <button class="btn btn--index btn--black btn--notice" onclick="location.href='/notice'">お知らせ</button>
+               <button class="btn btn--index btn--black btn--items" onclick="location.href='/items'">商品一覧</button>
             </div>
          </div>
       </section>
@@ -59,9 +59,9 @@
                   <button type="button" th:class="'btn--slide slide__prev' + ${itemReviewDTOStat.index + 1}"><img class="btn--slide-img" alt="back" src="/images/icons/left-arrow.svg"></button>
                   <img th:src="@{/images/itemImages/__${itemReviewDTO.itemNo}__/thumb/__${itemReviewDTO.itemPhotosDTO.itemThumb}__}">
                   <div class="slide__info">
-                     <h2 class="item__card-name item__card-name--rank" th:text="${itemReviewDTOStat.index + 1} + '위'"></h2>
+                     <h2 class="item__card-name item__card-name--rank" th:text="${itemReviewDTOStat.index + 1} + '位'"></h2>
                      <h2 class="item__card-name" th:text="${itemReviewDTO.itemName}"></h2>
-                     <h2 class="item__card-price" th:text="${itemReviewDTO.itemPrice} + '원'"></h2>
+                     <h2 class="item__card-price" th:text="${itemReviewDTO.itemPrice} + 'ウォン'"></h2>
                      <div class="item__rank">
                         <input
                                 type="hidden"
@@ -80,7 +80,7 @@
                      </div>
                      <div class="slide__btns">
                         <form th:action="@{/items/{itemNo}(itemNo=${itemReviewDTO.itemNo})}" method="get">
-                           <button class="btn btn--index btn--black btn--best-items">상품 자세히 보기</button>
+                           <button class="btn btn--index btn--black btn--best-items">商品情報</button>
                         </form>
                      </div>
                   </div>
@@ -94,17 +94,8 @@
       <section class="section section--access">
          <h1 class="section__title section__title--right">Access</h1>
          <div id="map" class="api__container" name="map">
-            <!-- * 카카오맵 - 지도퍼가기 -->
-            <!-- 1. 지도 노드 -->
             <div id="daumRoughmapContainer1703765293064" class="root_daum_roughmap root_daum_roughmap_landing" style="width:100%"></div>
-
-            <!--
-                2. 설치 스크립트
-                * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-            -->
             <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-
-            <!-- 3. 실행 스크립트 -->
             <script charset="UTF-8">
                new daum.roughmap.Lander({
                   "timestamp" : "1703765293064",
@@ -114,9 +105,9 @@
             </script>
          </div>
          <address>
-            서울특별시 종로구 종로12길 15 (관철동 13-13)<br>
-            1호선 종각역 4번 출구로부터 약 240m <br>
-            <span class="address__time">영업시간: 오전 11시~ 오후 9시 (월요일 휴무)</span>
+            ソウル特別市 鍾路区 鍾路12街 15-1 貫鉄洞(13-13)<br>
+            1号線 鐘閣駅 4番 出口より約240m <br>
+            <span class="address__time">営業時間: 午前 11時~ 午後 9時 (月曜日 休業)</span>
          </address>
       </section>
    </section>

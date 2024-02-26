@@ -41,7 +41,7 @@
                 <button class="btn btn--black btn--xs"
                         th:onclick="|window.location.href=
                         '/members/${qnaDetail.memberNo}/qna/${qnaDetail.qnaNo}/update'|">
-                    수정
+                    修正
                 </button>
             </div>
         </div>
@@ -53,11 +53,11 @@
     <div class="context">
 
         <div class="inner-div">
-            <div class="inner">어드민</div>
+            <div class="inner">マネージャー</div>
         </div>
 
         <div class="inner--context">
-            <div th:text="${qnaDetail.qnaAnswer} != null ? ${qnaDetail.qnaAnswer} : '곧 답변 드리겠습니다.'"></div>
+            <div th:text="${qnaDetail.qnaAnswer} != null ? ${qnaDetail.qnaAnswer} : '確認でき次第ご答弁させて頂きます。'"></div>
         </div>
 
         <div class="inner-div">

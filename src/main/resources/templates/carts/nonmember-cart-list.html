@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
     <script defer src="/js/nonmember-updatecart.js"></script>
-    <!--<script defer src="/js/nonmember-getjsondata.js"></script>-->
     <title>비회원 장바구니 조회</title>
 </head>
 <body>
@@ -30,7 +29,7 @@
                         th:onclick= "updateQuantity(1, this.getAttribute('cartNo'))"> + </button>
                 <button th:id = "'deleteBtn_' + ${nonMemberCartDTO.cartNo}"
                         th:cartIndex = "${Index.index}"
-                        th:onclick= "sendCartDeleteJson(this.getAttribute('cartIndex'))"> 삭제 </button>
+                        th:onclick= "sendCartDeleteJson(this.getAttribute('cartIndex'))">  </button>
                 <input th:id = "'cartCheckBox_' + ${Index.index}"
                        th:cartDTOListSize ="${session.nonmemberCartList.size()}"
                        class = "cartCheckboxes"
@@ -50,8 +49,8 @@
             <button
                     th:cartDTOListSize ="${session.nonmemberCartList.size()}"
                     th:onclick="checkItemStock(this.getAttribute('cartDTOListSize'))"
-                    style = "position: absolute; left:23%;"> 선택한 상품 구매</button>
-            <button style = "position: absolute; left:30%;"> 선택한 상품 삭제</button>
+                    style = "position: absolute; left:23%;"> 選択商品購買</button>
+            <button style = "position: absolute; left:30%;"> 選択商品削除</button>
 
         </div>
 

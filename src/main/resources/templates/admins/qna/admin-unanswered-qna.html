@@ -14,9 +14,9 @@
     <div class="main">
         <div class="admin_member"> QnA </div>
         <div class="answer">
-            <a  href="/qna/answer">답변완료</a>
+            <a  href="/qna/answer">回答済み</a>
             <span> | </span>
-            <a  href="/qna/noAnswer" style="color: #ffb94f;">답변대기</a>
+            <a  href="/qna/noAnswer" style="color: #ffb94f;">回答待機</a>
         </div>
         <!--        <div class="admin_member_search">-->
         <!--          <form th:action="@{admin/search}" method="get">-->
@@ -37,13 +37,13 @@
         <table>
             <thead>
             <tr>
-                <th>번호</th>
-                <th>회원 아이디</th>
-                <th>상품 번호</th>
-                <th>구분</th>
-                <th>제목</th>
-                <th>등록일자</th>
-                <th>답변여부</th>
+                <th>番号</th>
+                <th>会員ID</th>
+                <th>商品番号</th>
+                <th>種類</th>
+                <th>題名</th>
+                <th>登録時間</th>
+                <th>答弁状況</th>
             </tr>
             </thead>
             <tbody th:each="QnaDTO : ${qnaListByPaging}">
@@ -55,16 +55,16 @@
                 <td th:text="${QnaDTO.qnaTitle}"></td>
                 <td th:text="${#dates.format(QnaDTO.qnaQuestionCreatedTime, 'yyyy-MM-dd')}"></td>
                 <td>
-                    <span th:if="${QnaDTO.qnaAnswer != null}" >답변완료</span>
-                    <span th:unless="${QnaDTO.qnaAnswer != null}">답변대기</span>
+                    <span th:if="${QnaDTO.qnaAnswer != null}" >回答済み</span>
+                    <span th:unless="${QnaDTO.qnaAnswer != null}">回答待機</span>
                 </td>
             </tr>
         </table>
 
         <div class="admin_member_page">
-            <span th:if="${pageSettings.page &lt;= 1}">이전</span>
+            <span th:if="${pageSettings.page &lt;= 1}">以前</span>
             <span th:unless="${pageSettings.page &lt;= 1}">
-            <a th:href="@{/qna/noAnswer(page=${pageSettings.page - 1})}">이전</a>
+            <a th:href="@{/qna/noAnswer(page=${pageSettings.page - 1})}">以前</a>
           </span>
 
             <span th:each="i : ${#numbers.sequence(pageSettings.startPage, pageSettings.endPage)}">
@@ -74,10 +74,10 @@
                th:text="${i}"></a>
           </span>
 
-            <span th:if="${pageSettings.page >= pageSettings.totalPage}">다음</span>
+            <span th:if="${pageSettings.page >= pageSettings.totalPage}">次に</span>
             <a th:unless="${pageSettings.page >= pageSettings.totalPage}"
                th:href="@{/qna/noAnswer(page=${pageSettings.page + 1})}"
-            >다음</a
+            >次に</a
             >
         </div>
     </div>

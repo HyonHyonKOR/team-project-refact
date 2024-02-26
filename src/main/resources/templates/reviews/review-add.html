@@ -2,12 +2,12 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
-    <title>PERION - 질문 등록</title>
+    <title>PERION - レビュー登録</title>
     <link rel="stylesheet" href="/css/pages/user/qna-add.css">
     <link rel="stylesheet" href="/css/pages/user/review-add.css">
 </head>
 <body class="main__container">
-    <h2 class="main__title qna-add__title review-add__title">리뷰 작성</h2>
+    <h2 class="main__title qna-add__title review-add__title">レビュー作成</h2>
     <div class="qna-add__container">
         <form th:action="@{'/reviews/' + ${memberNo} + '/' + ${itemNo} + '/add'}" method="post" >
             <input type="hidden" name= "memberOrderDetailNo" th:value="${memberOrderDetailNo}">
@@ -33,7 +33,7 @@
                      name="reviewContext" maxlength="200"
              ></textarea>
             <div>
-                <button class="btn btn--black btn--mi" type="submit">등록</button>
+                <button class="btn btn--black btn--mi" type="submit">登録</button>
             </div>
 
         </form>

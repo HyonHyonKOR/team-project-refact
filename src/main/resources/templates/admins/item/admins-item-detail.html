@@ -37,7 +37,7 @@
                 </span>
               </div>
 
-              <span>상품명: <input name="itemName" th:value="${itemDTO.itemName}"></span>
+              <span>商品名: <input name="itemName" th:value="${itemDTO.itemName}"></span>
               <span th:if="${itemDTO.itemGrade != null}" th:text="'평점: ' + ${itemDTO.itemGrade}"></span>
               <span th:unless="${itemDTO.itemGrade != null}" th:text="'평점: 없음'"></span>
             </div>
@@ -108,7 +108,7 @@
               <button>수정</button>
         </form>
                 <form th:action="@{/items/admin/{itemNo}/delete(itemNo=${itemDTO.itemNo})}" method="get">
-                  <button class="btn--drop">삭제</button>
+                  <button class="btn--drop"></button>
                 </form>
             </div>
           </div>

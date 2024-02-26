@@ -22,7 +22,7 @@
             </div>
 
             <div th:each="cart: ${cartDTOList}">
-                <div th:text="'상품명: ' + ${cart.itemName}"></div>
+                <div th:text="'商品名: ' + ${cart.itemName}"></div>
                 <div><img th:src="@{/images/itemImages/__${cart.itemNo}__/thumb/__${cart.itemThumbnail}__}"></div>
                 <div th:text="'사이즈: ' + ${cart.itemSize}"></div>
                 <div th:text="'가격: ' + ${cart.itemPrice}"></div>

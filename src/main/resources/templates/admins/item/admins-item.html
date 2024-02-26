@@ -22,7 +22,7 @@
           <form action="/items/admin" method="get">
             <select name="category">
               <option value="member_id">상품 번호</option>
-              <option value="member_address_basic" selected>상품명</option>
+              <option value="member_address_basic" selected>商品名</option>
             </select>
             <input type="text" name="searchKeyword"/>
             <button>검색</button>
@@ -39,7 +39,7 @@
               <th>상품 재고</th>
               <th>상품 카테고리</th>
               <th>수정</th>
-              <th>삭제</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -54,16 +54,16 @@
               </td>
               <td th:text="${item.itemCategory}"></td>
               <td><a th:href="@{/items/admin/{itemNo}(itemNo=${item.itemNo})}">수정</a></td>
-              <td><a th:href="@{/items/admin/{itemNo}/delete(itemNo=${item.itemNo})}">삭제</a></td>
+              <td><a th:href="@{/items/admin/{itemNo}/delete(itemNo=${item.itemNo})}"></a></td>
             </tr>
           </tbody>
         </table>
         <div th:if="${itemDTOList.size()} == 0" class="no-dto-comment">등록된 상품이 없습니다.</div>
 
         <div class="admin_item_page" th:if="${itemDTOList.size()} > 0">
-          <span th:if="${pageSettings.page &lt;= 1}">이전</span>
+          <span th:if="${pageSettings.page &lt;= 1}">以前</span>
           <span th:unless="${pageSettings.page &lt;= 1}">
-        <a th:href="@{/items/admin(page=${pageSettings.page - 1})}">이전</a>
+        <a th:href="@{/items/admin(page=${pageSettings.page - 1})}">以前</a>
     </span>
 
           <span th:each="i: ${#numbers.sequence(pageSettings.startPage, pageSettings.endPage)}">
@@ -73,9 +73,9 @@
            th:text="${i}"></a>
     </span>
 
-          <span th:if="${pageSettings.page >= pageSettings.totalPage}">다음</span>
+          <span th:if="${pageSettings.page >= pageSettings.totalPage}">次に</span>
           <a th:unless="${pageSettings.page >= pageSettings.totalPage}"
-             th:href="@{/items/admin(page=${pageSettings.page + 1})}">다음</a>
+             th:href="@{/items/admin(page=${pageSettings.page + 1})}">次に</a>
       </div>
       <!--main div-->
     </main>

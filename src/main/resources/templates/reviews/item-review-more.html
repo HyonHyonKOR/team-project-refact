@@ -12,7 +12,7 @@
 <header th:unless="${session.loginMember != null}" th:replace="~{fragments/header :: header}">
 </header>
         <h1 class="main__title">
-            <a th:text="${itemName} + ' 리뷰 목록'"
+            <a th:text="${itemName} + ' レビュー一覧'"
                th:href="@{/items/{itemNo}(itemNo=${itemNo})}"></a>
         </h1>
 
@@ -21,7 +21,7 @@
             <div class="review_container2">
                 <div class="review_info">
                     <span th:text="${#strings.substring(ReviewDTO.memberId, 0, 3)} + '***'"></span>
-                    <span th:text="'사이즈: '+${ReviewDTO.itemSize}"></span>
+                    <span th:text="'サイズ: '+${ReviewDTO.itemSize}"></span>
                     <span th:text= "'★'+${ReviewDTO.reviewScore}"></span>
                 </div>
                 <div>
@@ -38,9 +38,9 @@
 
     <div class="review__page">
 
-        <span th:if="${pageSettings.page &lt;= 1}">이전</span>
+        <span th:if="${pageSettings.page &lt;= 1}">以前</span>
         <span th:unless="${pageSettings.page &lt;= 1}">
-            <a th:href="@{/members/{memberNo}/reviews(memberNo=${memberNo},page=${pageSettings.page - 1})}">이전</a>
+            <a th:href="@{/members/{memberNo}/reviews(memberNo=${memberNo},page=${pageSettings.page - 1})}">以前</a>
           </span>
 
         <span th:each="i : ${#numbers.sequence(pageSettings.startPage, pageSettings.endPage)}">
@@ -50,10 +50,10 @@
                th:text="${i}"></a>
           </span>
 
-        <span th:if="${pageSettings.page >= pageSettings.totalPage}">다음</span>
+        <span th:if="${pageSettings.page >= pageSettings.totalPage}">次に</span>
         <a th:unless="${pageSettings.page >= pageSettings.totalPage}"
            th:href="@{/members/{memberNo}/reviews(memberNo=${memberNo},page=${pageSettings.page + 1})}"
-        >다음</a>
+        >次に</a>
 
     </div>
 

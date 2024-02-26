@@ -53,7 +53,7 @@
                        th:index = "${cartIndex.index}"
                        th:cartNo = "${cartDTO.cartNo}"
                        th:memberNo = "${cartDTO.memberNo}"
-                       th:onclick="deleteCart(this.getAttribute('index'), this.getAttribute('cartNo'), this.getAttribute('memberNo'))"> 삭제 </button>
+                       th:onclick="deleteCart(this.getAttribute('index'), this.getAttribute('cartNo'), this.getAttribute('memberNo'))">  </button>
                <input th:id = "'cartCheckBox_' + ${cartIndex.index}"
                       th:cartDTOListSize ="${cartDTOList.size()}"
                       class = "cartCheckboxes"
@@ -73,19 +73,11 @@
                    th:cartDTOListSize ="${cartDTOList.size()}"
                    th:memberNo = "${session.loginMember.memberNo}"
                    th:onclick="checkItemStock2(this.getAttribute('cartDTOListSize'), this.getAttribute('memberNo'));"
-                   style = "position: absolute; left:23%;"> 선택한 상품 구매</button>
-           <button style = "position: absolute; left:30%;"> 선택한 상품 삭제</button>
+                   style = "position: absolute; left:23%;"> 選択商品購買</button>
+           <button style = "position: absolute; left:30%;"> 選択商品削除</button>
        </form>
 
 
     </main>
-
-    <footer>
-        <form action = "carts/item_info_temp" method = "GET">
-            <br><br><br><br><br><br>
-            <button> 상품 상세 정보 페이지로 이동(임시)</button>
-        </form>
-    </footer>
-
 </body>
 </html>

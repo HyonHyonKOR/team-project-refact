@@ -40,10 +40,10 @@
                 <th>번호</th>
                 <th>회원 아이디</th>
                 <th>상품 번호</th>
-                <th>구분</th>
+                <th>種類</th>
                 <th>제목</th>
-                <th>등록일자</th>
-                <th>답변여부</th>
+                <th>登録時間</th>
+                <th>回答状況</th>
             </tr>
             </thead>
             <tbody th:each="QnaDTO : ${qnaListByPaging}">
@@ -62,9 +62,9 @@
         </table>
 
         <div class="admin_member_page">
-            <span th:if="${pageSettings.page &lt;= 1}">이전</span>
+            <span th:if="${pageSettings.page &lt;= 1}">以前</span>
             <span th:unless="${pageSettings.page &lt;= 1}">
-            <a th:href="@{/qna/answer(page=${pageSettings.page - 1})}">이전</a>
+            <a th:href="@{/qna/answer(page=${pageSettings.page - 1})}">以前</a>
           </span>
 
             <span th:each="i : ${#numbers.sequence(pageSettings.startPage, pageSettings.endPage)}">
@@ -74,10 +74,10 @@
                th:text="${i}"></a>
           </span>
 
-            <span th:if="${pageSettings.page >= pageSettings.totalPage}">다음</span>
+            <span th:if="${pageSettings.page >= pageSettings.totalPage}">次に</span>
             <a th:unless="${pageSettings.page >= pageSettings.totalPage}"
                th:href="@{/qna/answer(page=${pageSettings.page + 1})}"
-            >다음</a
+            >次に</a
             >
         </div>
     </div>
