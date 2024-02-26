@@ -18,12 +18,12 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
         if(session.getAttribute("loginMember") == null && session.getAttribute("loginAdmin") == null){
             // 관리자 페이지로 리다이렉트
             if (isAdminPage(requestURI)) {
-                log.warn("미인증 관리자 요청(비회원)");
+                log.warn("未認証管理者リクエスト(非会員)");
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
 
             } else {
                 //일반 사용자 페이지로 리다이렉트
-                log.warn("미인증 사용자 요청");
+                log.warn("未認証ユーザーのリクエスト");
                 response.sendRedirect("/members/login");
             }
             return false;

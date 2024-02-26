@@ -16,9 +16,9 @@ import static com.example.shoppingmall.member.validation.MemberValidationGroup.*
 public class MemberLoginDTO {
 
 
-    @NotBlank(message="아이디를 입력해주세요." ,groups = MemberNotBlankGroup.class)
+    @NotBlank(message="会員IDをご入力ください。." ,groups = MemberNotBlankGroup.class)
     private String memberId;
-    @NotBlank(message="비밀번호를 입력해주세요.",groups = MemberNotBlankGroup.class)
+    @NotBlank(message="パスワードをご入力ください。.",groups = MemberNotBlankGroup.class)
     private String memberPw;
 
     public static Member MemberLoginDTOToMember(MemberLoginDTO memberLoginDTO){

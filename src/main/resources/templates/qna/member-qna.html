@@ -43,7 +43,7 @@
                 <td class="qna__drop">
                     <form th:action="'/members/'+${QnaDTO.memberNo}+'/qna'" method="post" >
                         <input type="hidden" name="qnaNo" th:value="${QnaDTO.qnaNo}" />
-                        <button type="submit" class="btn--xs btn--black"></button>
+                        <button type="submit" class="btn--xs btn--black">削除</button>
                     </form>
                 </td>
             </tr>

@@ -24,17 +24,17 @@ public class MemberOrderAddDTO {
     private Long memberOrderNo;
     private Long memberNo;
     private Timestamp orderTime;
-    @NotBlank(message = "휴대폰 번호를 입력해주세요.", groups = OrderNotBlankGroup.class)
-    @Pattern(regexp = "^01(?:0|1|[6-9])\\d{7,8}$", message = "유효하지 않은 휴대폰 번호입니다.", groups = OrderPatternGroup.class)
+    @NotBlank(message = "携帯番号をご入力ください。.", groups = OrderNotBlankGroup.class)
+    @Pattern(regexp = "^01(?:0|1|[6-9])\\d{7,8}$", message = "正しくない携帯番号の形式です。", groups = OrderPatternGroup.class)
     private String orderHp;
-    @NotNull(message = "우편번호를 입력해주세요.", groups = OrderNotBlankGroup.class)
+    @NotNull(message = "郵便番号をご入力ください。.", groups = OrderNotBlankGroup.class)
     private Integer orderPostalCode;
-    @NotBlank(message = "기본주소를 입력해주세요.", groups = OrderNotBlankGroup.class)
+    @NotBlank(message = "기본주소를 ご入力ください。.", groups = OrderNotBlankGroup.class)
     private String orderAddressBasic;
-    @Pattern(regexp = "[\\s가-힣a-zA-Z0-9]{0,50}", message = "최대 50자까지 가능합니다.", groups = OrderPatternGroup.class)
+    @Pattern(regexp = "[\\s가-힣a-zA-Z0-9]{0,50}", message = "最大50字まで入力可能です。", groups = OrderPatternGroup.class)
     private String orderAddressDetail;
-    @NotBlank(message = "성명을 입력해주세요.", groups = OrderNotBlankGroup.class)
-    @Pattern(regexp = "[가-힣]{2,40}", message = "잘못된 이름 형식입니다.", groups = OrderPatternGroup.class)
+    @NotBlank(message = "お名前をご入力ください。.", groups = OrderNotBlankGroup.class)
+    @Pattern(regexp = "[가-힣]{2,40}", message = "正しくない名前の形式です。", groups = OrderPatternGroup.class)
     private String receiverName;
     private Integer orderStatus;
 

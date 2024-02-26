@@ -47,7 +47,7 @@ public class MemberController {
 
         //로그인 실패 2 (아이디와 비밀번호 불일치)
         if(loginMember == null){
-            bindingResult.reject("loginFail","아이디 또는 비밀번호가 일치하지 않습니다.");
+            bindingResult.reject("loginFail","会員IDもしくはパスワードが一致しておりません。");
             return "members/member-login";
         }
 
@@ -84,13 +84,13 @@ public class MemberController {
 
         //회원 가입 실패 2 (비밀번호와 비밀번호 확인 불일치)
         if(!memberAddDTO.getMemberPw().equals(memberAddDTO.getMemberPw2())){
-            bindingResult.rejectValue("memberPw2",null,"비밀번호가 일치하지 않습니다.");
+            bindingResult.rejectValue("memberPw2",null,"パスワードをご確認ください。");
         }
 
         //성공 시
         try{
             memberService.join(memberAddDTO);
-            redirectAttributes.addFlashAttribute("memberAddSuccess", "회원 가입이 완료되었습니다.");
+            redirectAttributes.addFlashAttribute("memberAddSuccess", "会員登録を完了しました。");
             return "redirect:/members/add-success";
         }
 
@@ -104,7 +104,7 @@ public class MemberController {
 
     @GetMapping("/add-success")
     public String goToAddMemberSuccess(RedirectAttributes redirectAttributes){
-        redirectAttributes.addFlashAttribute("memberAddSuccess", "회원 가입이 완료되었습니다.");
+        redirectAttributes.addFlashAttribute("memberAddSuccess", "会員登録を完了しました。");
         return "members/add-member-success";
     }
 
@@ -154,13 +154,13 @@ public class MemberController {
 
         //회원 수정 실패 2 (비밀번호와 비밀번호 확인 불일치)
         if(!memberUpdateDTO.getMemberPw().equals(memberUpdateDTO.getMemberPw2())){
-            bindingResult.rejectValue("memberPw2",null,"비밀번호가 일치하지 않습니다.");
+            bindingResult.rejectValue("memberPw2",null,"パスワードをご確認ください。");
             return "members/update-member";
         }
 
         try{
             memberService.update(memberUpdateDTO);
-            redirectAttributes.addFlashAttribute("memberUpdateSuccess", "회원 정보가 업데이트되었습니다.");
+            redirectAttributes.addFlashAttribute("memberUpdateSuccess", "会員情報が更新されました。");
             return "redirect:/members/{memberNo}/update";
 
         //회원 수정 실패 3 (중복된 핸드폰 번호가 존재)
@@ -187,7 +187,7 @@ public class MemberController {
 
         //회원 탈퇴 실패 2 (비밀번호와 비밀번호 확인 불일치)
         if(!memberDeleteDTO.getMemberPw().equals(memberDeleteDTO.getMemberPw2())){
-            bindingResult.rejectValue("memberPw2",null,"비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+            bindingResult.rejectValue("memberPw2",null,"パスワードとパスワード確認をもう一度ご確認ください。");
             return "members/delete-member";
         }
 

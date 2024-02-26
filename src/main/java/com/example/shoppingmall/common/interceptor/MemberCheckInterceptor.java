@@ -27,18 +27,18 @@ public class MemberCheckInterceptor implements HandlerInterceptor {
             String[] path = requestURI.split("/");
             requestedMemberNo = path[2];
 
-            log.info("멤버 체크 인터셉터 실행 {}", requestURI);
+            log.info("会員チェックインターセプター {}", requestURI);
 
             //현재 사용자의 회원번호와 요청된 멤버 회원번호가 다르면 정보 차단
             if (!currentNo.equals(requestedMemberNo)) {
-                log.warn("{}번 회원으로부터 {}번 회원의 정보에 잘못된 접근을 요청", currentNo, requestedMemberNo);
+                log.warn("{}番会員から{}会員の情報に正しくないリクエスト。", currentNo, requestedMemberNo);
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 return false;
             }
 
             //회원이 관리자 권한을 요청하는 경우 차단
             if (isAdminPage(requestURI)) {
-                log.warn("{}번 회원으로부터 잘못된 관리자 권한 요청", currentNo);
+                log.warn("{}番会員から管理者権限に正しくないアクセス。", currentNo);
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 return false;
                 }

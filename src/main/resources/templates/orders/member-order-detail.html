@@ -2,20 +2,20 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
-    <title>PERION - 회원 주문 상세 조회</title>
+    <title>PERION - 会員注文詳細</title>
     <script src="/js/pages/order.js"></script>
 </head>
 <body>
 <header th:replace="~{fragments/login-header :: header}"></header>
 <main class="main__container section">
-        <h1 class="main__title">나의 주문 상세</h1>
+        <h1 class="main__title">注文詳細</h1>
         <table class = "table__client table--2">
             <thead>
                <tr>
-                    <th class="cart__price">주문번호</th>
-                    <th class="cart__price">수령자명</th>
-                    <th class ="order__hp">수령자 연락처</th>
-                    <th>수령자 주소</th>
+                    <th class="cart__price">注文番号</th>
+                    <th class="cart__price">受取人名</th>
+                    <th class ="order__hp">受取人の連絡先</th>
+                    <th>受取人の住所</th>
                </tr>
             </thead>
             <tbody>
@@ -30,10 +30,10 @@
         <table class="table__client table--2">
             <thead>
             <tr>
-                <th class="cart__checkbox">번호</th>
+                <th class="cart__checkbox">番号</th>
                 <th colspan="2" style="text-align: center">商品名</th>
-                <th class="cart__price">상품 가격</th>
-                <th class="cart__quantity" style="text-align: center">수량</th>
+                <th class="cart__price">商品価格</th>
+                <th class="cart__quantity" style="text-align: center">数量</th>
                 <th class="cart__btn"></th>
             </tr>
             </thead>
@@ -49,30 +49,30 @@
                         <h4>
                             <a th:href="@{/items/{itemNo}(itemNo=${memberorderDetail.itemNo})}" th:text="${memberorderDetail.itemName}"></a>
                         </h4>
-                        <span th:text="'사이즈: ' + ${memberorderDetail.itemSize}"></span>
+                        <span th:text="'サイズ: ' + ${memberorderDetail.itemSize}"></span>
                         <!--
                         <input th:id="'itemNo_' + ${cartIndex.index}" th:value ="${cartDTO.itemNo}" style="display:none;">
                         -->
                     </td>
-                    <td class="cart__price" th:text="${memberorderDetail.itemPrice} + '원'"></td>
+                    <td class="cart__price" th:text="${memberorderDetail.itemPrice} + 'ウォン'"></td>
                     <td class="cart__quantity order__quantity" th:text="${memberorderDetail.itemQuantity}"></td>
                     <td class="cart__btn">
 
                         <button class="btn btn--order btn--black"
                                 th:if="${memberOrderDTO.orderStatus} == 1 and ${memberorderDetail.reviewCount} == 0"
                                 th:onclick="|window.open('/reviews/${session.loginMember.memberNo}/${memberorderDetail.itemNo}/add?memberOrderDetailNo=${memberorderDetail.memberOrderDetailNo}', 'name', 'resizable=no,width=400,height=660'); return false;|">
-                            리뷰 작성
+                            レビュー作成
                         </button>
                         <div th:if="${memberOrderDTO.orderStatus} == 1 and ${memberorderDetail.reviewCount} != 0" th:text="'작성 완료'"></div>
-                        <div th:if="${memberOrderDTO.orderStatus} == 0" th:text="'작성 불가'"></div>
+                        <div th:if="${memberOrderDTO.orderStatus} == 0" th:text="'作成不可'"></div>
                     </td>
                 </tr>
 
             </tbody>
         </table>
         <div class="items__page notice__link">
-            <a href="#" onclick="history.back()">以前 페이지로</a>
-            <a th:href="@{/members/{memberNo}/orders(memberNo=${session.loginMember.memberNo})}">주문 목록으로</a>
+            <a href="#" onclick="history.back()">以前ページへ</a>
+            <a th:href="@{/members/{memberNo}/orders(memberNo=${session.loginMember.memberNo})}">注文一覧へ</a>
         </div>
     </main>
 </body>

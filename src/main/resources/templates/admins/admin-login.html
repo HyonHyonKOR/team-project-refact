@@ -14,20 +14,20 @@
     </div>
     <form th:action method="post" th:object="${adminLoginDTO}">
         <label class="label" for="adminId">
-            <h5 class="label__title">관리자 아이디</h5>
+            <h5 class="label__title">管理者ID</h5>
             <input id="adminId" name="adminId" class="input" type="text" th:field="*{adminId}"/>
             <div class="label__error-container">
             <h6 class="label__error" th:errors="*{adminId}">에러메시지를 출력합니다.</h6>
             </div>
         </label>
         <label class="label" for="adminPw">
-            <h5 class="label__title">관리자 비밀번호</h5>
+            <h5 class="label__title">管理者パスワード</h5>
             <input id="adminPw" name="adminPw" class="input" type="password" th:field="*{adminPw}"/>
             <div class="label__error-container">
             <h6 class="label__error" th:errors="*{adminPw}">에러메시지를 출력합니다.</h6>
             </div>
         </label>
-        <button class="btn btn__lg btn--black">관리자 로그인</button>
+        <button class="btn btn__lg btn--black">管理者ログイン</button>
     </form>
 </main>
 </body>

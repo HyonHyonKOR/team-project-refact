@@ -12,13 +12,13 @@ import static com.example.shoppingmall.member.validation.MemberValidationGroup.*
 @NoArgsConstructor
 @AllArgsConstructor
 public class MemberPwDTO {
-    @NotBlank(message = "아이디를 입력해주세요", groups = MemberNotBlankGroup.class)
+    @NotBlank(message = "会員IDをご入力ください。", groups = MemberNotBlankGroup.class)
     private String memberId;
-    @NotBlank(message = "이메일을 입력해주세요", groups = MemberNotBlankGroup.class)
+    @NotBlank(message = "メールアドレスをご入力ください。", groups = MemberNotBlankGroup.class)
     private String memberEmail;
-    @NotBlank(message = "핸드폰번호를 입력해주세요", groups = MemberNotBlankGroup.class)
+    @NotBlank(message = "携帯番号をご入力ください。", groups = MemberNotBlankGroup.class)
     private String memberHp;
-//    @NotBlank(message = "비밀번호를 입력해주세요", groups = MemberNotBlankGroup.class)
+//    @NotBlank(message = "비밀번호를 ご入力ください。", groups = MemberNotBlankGroup.class)
     private String memberPw;
 
     public static MemberPwDTO MemberToMemberPwDTO(Member member){

@@ -53,7 +53,7 @@
         </label>
         <label class="label" for="memberHp">
             <h5 class="label__title">携帯番号*</h5>
-            <input id="memberHp" name="memberHp" class="input input--member input--lg" type="text" th:field="*{memberHp}" placeholder="-を除外した数字(11字)" autocomplete="off"/>
+            <input id="memberHp" name="memberHp" class="input input--member input--lg" type="text" th:field="*{memberHp}" placeholder="-を除外した数字(11字,010xxxxxxxx)" autocomplete="off"/>
             <div class="label__error-container">
                 <h6 class="label__error" th:errors="*{memberHp}">에러 메시지를 출력합니다.</h6>
             </div>

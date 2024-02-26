@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <div th:remove="tag" th:replace="~{fragments/head :: head} "></div>
     <script defer src="/js/member-updatecart.js"></script>
-    <title>회원 장바구니 조회</title>
+    <title>カート照会</title>
 </head>
 <body>
    <header th:replace="~{fragments/login-header :: header}"></header>
@@ -22,8 +22,6 @@
                <div th:id = "'itemSize_' + ${cartIndex.index}" th:text="${cartDTO.itemSize}"></div>
                <input th:id = "'itemPrice_' + ${cartIndex.index}" th:value="${cartDTO.itemPrice}" style="display:none;">
                <div th:text="'상품 가격 : ' + ${cartDTO.itemPrice}"></div>
-               <!--<div th:text="'상품 총액 : ' + ${cartDTO.itemPriceSum}"></div>-->
-               <!--<div th:text="'주문 총액 : ' + ${cartDTO.orderPriceSum}"></div>-->
                상품 수량 <input th:id="'inputvalue_' + ${cartIndex.index}" th:value ="${cartDTO.itemQuantity}" readonly></input>
                <button th:id="'decreaseButton_' + ${cartIndex.index}"
                        th:index = "${cartIndex.index}"
@@ -61,14 +59,14 @@
                       th:onclick="calculatePriceSum(this.getAttribute('cartDTOListSize'))">
                <hr>
            </div>
-           <span> 상품 총액 : </span>
+           <span> 商品総額 : </span>
            <span id = "priceSum">0</span>
-           <span>원</span>
+           <span>ウォン</span>
            <input id = "cartListAllCheckBtn" onclick="toggleAllCartCheckbox('cartCheckboxes')" type = "checkbox" style="width: 20px; position: absolute; left: 23%;">
-           <span style="position: absolute; left: 25%;" >전체 선택</span><br>
-           <span> 주문 총액 :</span>
+           <span style="position: absolute; left: 25%;" >全体選択</span><br>
+           <span> 注文総額 :</span>
            <span id = "orderSum">0</span>
-           <span>원</span>
+           <span>ウォン</span>
            <button
                    th:cartDTOListSize ="${cartDTOList.size()}"
                    th:memberNo = "${session.loginMember.memberNo}"

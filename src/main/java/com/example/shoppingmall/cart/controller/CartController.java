@@ -33,7 +33,6 @@ public class CartController {
     @GetMapping("/{memberNo}")
     public String showMemberCartList(@PathVariable(name = "memberNo") Long memberNo, Model model) {
         List<CartReadDTO> cartDTOList = cartService.getCartList(memberNo);
-        //cartDTOList[0].itemPhotosDTO.itemThumb
         model.addAttribute("cartDTOList", cartDTOList);
         return "carts/member-cart-list-test";
     }
@@ -75,14 +74,8 @@ public class CartController {
         Long cartNo = Long.parseLong(jsonData.get("cartNo"));
         Long itemNo = Long.parseLong(jsonData.get("itemNo"));
         String itemSize = jsonData.get("itemSize");
-//        System.out.println("JSON으로 전송받은 사이즈 : " + jsonData.get("itemSize"));
-//        System.out.println("JSON으로 전송받은 아이템 번호 : " + jsonData.get("itemNo"));
-        //Integer itemStockValue = cartService.getItemStockValue(itemNo, itemSize);
-        //System.out.println(itemStockValue);
-
         Map<String, Object> responseData = new HashMap<>();
         responseData.put("response", "잘 받았습니다.");
-
         cartService.updateCartItem(cartNo, currentQuantityNum);
         return responseData;
     }
@@ -127,8 +120,6 @@ public class CartController {
         System.out.println("비회원 - 받아온 상품번호 : " + itemNo);
 
         String itemThumb = itemService.getItemThumbByNo(itemNo);
-        //System.out.println("db에서 받아온 썸넬 : " + itemThumb);
-
         HttpSession session = req.getSession();
         session.setAttribute("nonmemberCartList", cartService.nonMemberAddCartItem(itemThumb, itemName, itemSize, itemPrice, itemQuantity, itemNo, req));
 
@@ -143,9 +134,6 @@ public class CartController {
 
         HttpSession session = req.getSession();
         session.setAttribute("nonmemberCartList", cartService.nonMemberUpdateCartItem(cartIndex, changeQuantity, session));
-        //System.out.println("Java로 전송받은 변경 수량 : " + changeQuantity);
-        //System.out.println("Java로 전송받은 리스트 인덱스 : " + cartIndex);
-
         return "carts/nonmember-cart-list";
     }
 
@@ -153,7 +141,6 @@ public class CartController {
     @PostMapping("/{cartNo}/delete")
     public String deleteItemsInNonMemberCart(@RequestBody Map<String, String> jsonData, HttpServletRequest req){
         Integer cartIndex = Integer.parseInt(jsonData.get("cartNo"));
-
         HttpSession session = req.getSession();
         session.setAttribute("nonmemberCartList", cartService.nonMemberDeleteCartItem(cartIndex, session));
 

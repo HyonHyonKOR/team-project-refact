@@ -15,9 +15,9 @@ import static com.example.shoppingmall.member.validation.MemberValidationGroup.*
 @AllArgsConstructor
 public class MemberDeleteDTO {
     private Long memberNo;
-    @NotBlank(message = "비밀번호를 입력해주세요" ,groups = MemberNotBlankGroup.class)
+    @NotBlank(message = "パスワードをご入力ください。" ,groups = MemberNotBlankGroup.class)
     private String memberPw;
-    @NotBlank(message = "비밀번호를 입력해주세요", groups = MemberNotBlankGroup.class)
+    @NotBlank(message = "パスワードをご入力ください。", groups = MemberNotBlankGroup.class)
     private String memberPw2;
 
     public static Member MemberDeleteDTOToMember(Long memberNo,MemberDeleteDTO memberDeleteDTO){

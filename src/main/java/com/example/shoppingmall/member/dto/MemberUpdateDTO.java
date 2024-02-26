@@ -20,23 +20,23 @@ public class MemberUpdateDTO {
     private Long memberNo;
     private String memberEmail;
     private String memberId;
-    @NotBlank(message = "비밀번호를 입력해주세요.", groups = MemberNotBlankGroup.class)
-    @Size( min = 8, max = 20 , groups = MemberPatternGroup.class, message="잘못된 비밀번호 형식입니다.")
+    @NotBlank(message = "パスワードをご入力ください。.", groups = MemberNotBlankGroup.class)
+    @Size( min = 8, max = 20 , groups = MemberPatternGroup.class, message="正しくないパスワードの形式です。")
     private String memberPw;
-    @NotBlank(message = "비밀번호를 입력해주세요.", groups = MemberNotBlankGroup.class)
-    @Size( min = 8, max = 20 , groups = MemberPatternGroup.class, message="잘못된 비밀번호 형식입니다.")
+    @NotBlank(message = "パスワードをご入力ください。.", groups = MemberNotBlankGroup.class)
+    @Size( min = 8, max = 20 , groups = MemberPatternGroup.class, message="正しくないパスワードの形式です。")
     private String memberPw2;
-    @NotBlank(message = "휴대폰 번호를 입력해주세요.", groups = MemberNotBlankGroup.class)
-    @Pattern(regexp = "^01(?:0|1|[6-9])\\d{7,8}$", message = "유효하지 않은 휴대폰 번호입니다.", groups = MemberPatternGroup.class)
+    @NotBlank(message = "携帯番号をご入力ください。.", groups = MemberNotBlankGroup.class)
+    @Pattern(regexp = "^01(?:0|1|[6-9])\\d{7,8}$", message = "正しくない携帯番号の形式です。", groups = MemberPatternGroup.class)
     private String memberHp;
-    @NotBlank(message = "성명을 입력해주세요.", groups = MemberNotBlankGroup.class)
-    @Pattern(regexp = "[가-힣]{2,40}", message = "잘못된 이름 형식입니다.", groups = MemberPatternGroup.class)
+    @NotBlank(message = "お名前をご入力ください。.", groups = MemberNotBlankGroup.class)
+    @Pattern(regexp = "[가-힣]{2,40}", message = "正しくないお名前の形式です。", groups = MemberPatternGroup.class)
     private String memberName;
-    @NotNull(message = "우편번호를 입력해주세요.", groups = MemberNotBlankGroup.class)
+    @NotNull(message = "郵便番号をご入力ください。.", groups = MemberNotBlankGroup.class)
     private Integer memberPostalCode;
-    @NotBlank(message = "기본주소를 입력해주세요." ,groups = MemberNotBlankGroup.class)
+    @NotBlank(message = "基本住所をご入力ください。." ,groups = MemberNotBlankGroup.class)
     private String memberAddressBasic;
-    @Pattern(regexp = "[\\s가-힣a-zA-Z0-9]{0,50}", message = "최대 50자까지 가능합니다.", groups = MemberPatternGroup.class)
+    @Pattern(regexp = "[\\s가-힣a-zA-Z0-9]{0,50}", message = "最大50字まで入力可能です。", groups = MemberPatternGroup.class)
     private String memberAddressDetail;
 
     public static Member MemberUpdateDTOToMember(MemberUpdateDTO memberUpdateDTO){

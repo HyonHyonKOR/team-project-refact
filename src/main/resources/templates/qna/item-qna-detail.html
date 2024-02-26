@@ -17,7 +17,7 @@
     <div class="line"></div>
 
     <div class="title">
-        <span class="t">제목: <span th:text="${qnaDetail.qnaTitle}"></span> </span>
+        <span class="t">題名: <span th:text="${qnaDetail.qnaTitle}"></span> </span>
         <span th:text="${qnaDetail.qnaClassification}"></span>
         <span class="d" th:text="${#dates.format(qnaDetail.qnaQuestionCreatedTime, 'yyyy-MM-dd')}"></span>
     </div>

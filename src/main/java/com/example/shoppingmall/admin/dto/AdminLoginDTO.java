@@ -13,9 +13,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class AdminLoginDTO {
 
-    @NotBlank(message = "아이디를 입력해주세요.")
+    @NotBlank(message = "아이디를 ご入力ください。.")
     private String adminId;
-    @NotBlank(message = "비밀번호를 입력해주세요.")
+    @NotBlank(message = "비밀번호를 ご入力ください。.")
     private String adminPw;
 
     public static Admin AdminLoginDTOToAdmin(AdminLoginDTO adminLoginDTO) {

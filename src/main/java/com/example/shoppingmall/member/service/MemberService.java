@@ -25,11 +25,11 @@ public class MemberService {
     public void join(MemberAddDTO memberAddDTO){
         Member member = MemberAddDTO.MemberAddDTOToMember(memberAddDTO);
         memberRepository.findById(member.getMemberId())
-                .ifPresent(m -> {throw new DuplicatedFieldException("memberId","이미 존재하는 아이디입니다.");});
+                .ifPresent(m -> {throw new DuplicatedFieldException("memberId","すでに存在しているIDです。");});
         memberRepository.findByEmail(member.getMemberEmail())
-                .ifPresent(m -> {throw new DuplicatedFieldException("memberEmail","이미 존재하는 이메일입니다.");});
+                .ifPresent(m -> {throw new DuplicatedFieldException("memberEmail","すでに存在しているメールです。");});
         memberRepository.findByHp(member.getMemberHp())
-                .ifPresent(m -> {throw new DuplicatedFieldException("memberHp","이미 존재하는 휴대폰 번호입니다.");});
+                .ifPresent(m -> {throw new DuplicatedFieldException("memberHp","すでに存在している携帯番号です。");});
         memberRepository.save(member);
     }
 
@@ -66,7 +66,7 @@ public class MemberService {
                 .ifPresent(existingMember -> {
                     // 기존 휴대폰 번호와 다른 회원이 이미 존재 하면 예외 처리
                     if (!existingMember.getMemberId().equals(member.getMemberId())) {
-                        throw new DuplicatedFieldException("memberHp", "이미 존재하는 휴대폰 번호입니다.");
+                        throw new DuplicatedFieldException("memberHp", "すでに存在している携帯番号です。");
                     }
                 });
 
@@ -82,7 +82,7 @@ public class MemberService {
                 .filter(m -> m.getMemberPw().equals(member.getMemberPw()))
                 .ifPresentOrElse(
                 m -> memberRepository.deleteByNo(member.getMemberNo()),
-                () -> { throw new IllegalStateException("비밀번호가 일치하지 않습니다."); }
+                () -> { throw new IllegalStateException("パスワードを再度ご確認ください。"); }
         );
     }
 

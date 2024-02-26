@@ -12,7 +12,7 @@ import static com.example.shoppingmall.member.validation.MemberValidationGroup.*
 @NoArgsConstructor
 @AllArgsConstructor
 public class MemberIdDTO {
-    @NotBlank(message = "이메일을 입력해주세요" , groups = MemberNotBlankGroup.class)
+    @NotBlank(message = "メールアドレスをご入力ください。" , groups = MemberNotBlankGroup.class)
     private String memberEmail;
     private String memberId;
 
