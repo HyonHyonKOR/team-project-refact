@@ -6,6 +6,26 @@
 「基本に充実する」といった共通の目的に一致したためです。<br>
 　PERIONは韓国のMMORPGに登場する戦士の村で、「戦士のように、強い気持ちで生きていきたい」といった気持ちを込め、名付けました。
 </p>
+  <div align="center">
+  <a href="https://zenn.dev/eldorado215/articles/7d73cc24b656ec" style="text-decoration: none;">
+  <img src="https://img.shields.io/badge/Portfolio Web Site-232F3E?style=for-the-badge&logo=AmazonAws&logoColor=orange"/>
+  </a>
+</div>
+<div align="center">
+  <a href="https://github.com/HyonHyonKOR/team-project-refact" style="text-decoration: none;">
+  <img src="https://img.shields.io/badge/SOURCE CODE & README-181717?style=for-the-badge&logo=Github&logoColor=orange"/>
+  </a>
+</div>
+<div align="center">
+  <a href="https://zenn.dev/eldorado215/articles/7d73cc24b656ec" style="text-decoration: none;">
+  <img src="https://img.shields.io/badge/Portfolio Review-3EA8FF?style=for-the-badge&logo=Zenn&logoColor=white"/>
+  </a>
+</div>
+  <div align="center">
+  <a href="https://docs.google.com/spreadsheets/d/1vFpm3TK00l0waAvyiHfqa7ZDZ3zkNslgRtaVEF32sIs/edit#gid=574516391" style="text-decoration: none;">
+  <img src="https://img.shields.io/badge/Project会議録-34A853?style=for-the-badge&logo=Google Sheets&logoColor=white"/>
+  </a>
+</div>
 </div>
 
 ## 使用方法
@@ -13,6 +33,9 @@
 管理者ページの場合、/admins/loginをURLを追加すれば、移動することが可能ですが、
 データーの保存のため、ID,PWは公開しております。
 気になる方はぜひご連絡ください。
+
+※カードの場合、選択商品除去の機能が未完成です。
+※韓国語を日本語で翻訳した結果、一部のレイアウトが不自然になっている点、ご了承くださいませ。
 
 ## 全体目次
 - [プロジェクト概要](#プロジェクト概要)
@@ -64,11 +87,8 @@
   AJAX / 在庫管理機能　/　会員カート機能　/　非会員カート機能　/　非会員注文機能　 <br><br>
 
 ## プロジェクト説明
-※[プロジェクトの詳しい説明と過程につきましてはこちらより](https://zenn.dev/eldorado215/articles/7d73cc24b656ec) <br>
-※[プロジェクト会議録](https://docs.google.com/spreadsheets/d/1vFpm3TK00l0waAvyiHfqa7ZDZ3zkNslgRtaVEF32sIs/edit#gid=574516391) <br><br>
-ページの日本語はGoogle翻訳を使って臨時的に翻訳しております。
 
-## フロントエンド
+### フロントエンド
 
   + Responsive WEB
 <table>
@@ -167,7 +187,7 @@
   3. 一部のscriptにdeferを適用し、htmlのparsingを改善する努力をしました。<br>
   4. 一部のjsにEvent Delegation通して、不要なEvent Handlerを減らす努力をしました。<br>
 
-## バックエンド
+### バックエンド
   + 商品関連
 
   <table>
@@ -256,7 +276,7 @@
   解決できなかった点：一部のページではInterceptorが適用されない現象があるので、今後改善してみたいと思います。<br>
 
 ## リファクタリング
-- 近いうちにAWSへのdeployを計画中
+- AWSへのdeployを完了
 - 会員登録機能にAJAX,debouce機能を追加し、フロントエンドからもバリデーションチェックを追加
 - ページ処理のバグを改善する予定
 
@@ -266,6 +286,7 @@
 - ロゴ: https://www.figma.com/
 - Kakao Map API, Kakao アドレスAPI : https://developers.kakao.com/
 - Sweetalert2: https://sweetalert2.github.io/
+- lodash: https://lodash.com/docs/4.17.15#debounce
 - SVGおよびフォント: https://fonts.google.com/
 
 
