@@ -6,16 +6,6 @@
 「基本に充実する」といった共通の目的に一致したためです。<br>
 　PERIONは韓国のMMORPGに登場する戦士の村で、「戦士のように、強い気持ちで生きていきたい」といった気持ちを込め、名付けました。
 </p>
-  <div align="center">
-  <a href="http://ec2-18-183-150-69.ap-northeast-1.compute.amazonaws.com:8082/" style="text-decoration: none;">
-  <img src="https://img.shields.io/badge/Portfolio Web Site-232F3E?style=for-the-badge&logo=AmazonAws&logoColor=orange"/>
-  </a>
-</div>
-<div align="center">
-  <a href="https://github.com/HyonHyonKOR/team-project-refact" style="text-decoration: none;">
-  <img src="https://img.shields.io/badge/SOURCE CODE & README-181717?style=for-the-badge&logo=Github&logoColor=orange"/>
-  </a>
-</div>
 <div align="center">
   <a href="https://zenn.dev/eldorado215/articles/7d73cc24b656ec" style="text-decoration: none;">
   <img src="https://img.shields.io/badge/Portfolio Review-3EA8FF?style=for-the-badge&logo=Zenn&logoColor=white"/>
