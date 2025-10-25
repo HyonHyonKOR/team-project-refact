@@ -13,7 +13,7 @@
 </div>
   <div align="center">
   <a href="https://docs.google.com/spreadsheets/d/1vFpm3TK00l0waAvyiHfqa7ZDZ3zkNslgRtaVEF32sIs/edit#gid=574516391" style="text-decoration: none;">
-  <img src="https://img.shields.io/badge/Project会議録-34A853?style=for-the-badge&logo=Google Sheets&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Project会議録-34A853?style=for-the-badge&logo=googlesheets&logoColor=white"/>
   </a>
 </div>
 </div>
